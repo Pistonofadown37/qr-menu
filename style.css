@@ -11,17 +11,11 @@ html {
 body {
     margin: 0;
     padding: 0;
-
     background: #050505;
-
     color: #ffffff;
-
     font-family: Arial, Helvetica, sans-serif;
-
     position: relative;
-
     overflow-x: hidden;
-
     isolation: isolate;
 }
 
@@ -51,11 +45,6 @@ body::before {
 
     opacity: 0.60;
 
-    /*
-       GÖRSELİN ORTAYA DOĞRU
-       YUMUŞAK ŞEFFAFLAŞMASI
-    */
-
     -webkit-mask-image: linear-gradient(
         to right,
 
@@ -63,35 +52,23 @@ body::before {
         #000000 15%,
 
         rgba(0, 0, 0, 0.95) 22%,
-
         rgba(0, 0, 0, 0.80) 28%,
-
         rgba(0, 0, 0, 0.60) 33%,
-
         rgba(0, 0, 0, 0.40) 37%,
-
         rgba(0, 0, 0, 0.20) 41%,
-
         rgba(0, 0, 0, 0.08) 44%,
 
         transparent 48%,
-
         transparent 52%,
 
         rgba(0, 0, 0, 0.08) 56%,
-
         rgba(0, 0, 0, 0.20) 59%,
-
         rgba(0, 0, 0, 0.40) 63%,
-
         rgba(0, 0, 0, 0.60) 67%,
-
         rgba(0, 0, 0, 0.80) 72%,
-
         rgba(0, 0, 0, 0.95) 78%,
 
         #000000 85%,
-
         #000000 100%
     );
 
@@ -102,35 +79,23 @@ body::before {
         #000000 15%,
 
         rgba(0, 0, 0, 0.95) 22%,
-
         rgba(0, 0, 0, 0.80) 28%,
-
         rgba(0, 0, 0, 0.60) 33%,
-
         rgba(0, 0, 0, 0.40) 37%,
-
         rgba(0, 0, 0, 0.20) 41%,
-
         rgba(0, 0, 0, 0.08) 44%,
 
         transparent 48%,
-
         transparent 52%,
 
         rgba(0, 0, 0, 0.08) 56%,
-
         rgba(0, 0, 0, 0.20) 59%,
-
         rgba(0, 0, 0, 0.40) 63%,
-
         rgba(0, 0, 0, 0.60) 67%,
-
         rgba(0, 0, 0, 0.80) 72%,
-
         rgba(0, 0, 0, 0.95) 78%,
 
         #000000 85%,
-
         #000000 100%
     );
 
@@ -141,7 +106,7 @@ body::before {
 
 
 /* =====================================================
-   ANA MENÜ ALANI
+   ANA MENÜ
    ===================================================== */
 
 .container {
@@ -154,12 +119,6 @@ body::before {
     position: relative;
 
     z-index: 2;
-
-    /*
-       ÖNEMLİ:
-       Burada background kullanmıyoruz.
-       Böylece arka plan geçişi görünüyor.
-    */
 
     background: transparent;
 
@@ -208,13 +167,9 @@ body::before {
             ellipse at center,
 
             rgba(255, 220, 145, 0.38) 0%,
-
             rgba(218, 170, 80, 0.25) 20%,
-
             rgba(180, 125, 45, 0.14) 40%,
-
             rgba(100, 70, 25, 0.06) 55%,
-
             transparent 75%
         );
 
@@ -254,7 +209,7 @@ body::before {
 
 
 /* =====================================================
-   İBO CHEF YAZISI
+   İBO CHEF
    ===================================================== */
 
 .logo {
@@ -270,17 +225,14 @@ body::before {
 
     text-shadow:
         0 0 5px rgba(255, 255, 255, 0.45),
-
         0 0 12px rgba(255, 210, 120, 0.35),
-
         0 0 25px rgba(218, 170, 80, 0.20),
-
         0 4px 10px rgba(0, 0, 0, 0.65);
 }
 
 
 /* =====================================================
-   DİJİTAL MENÜ YAZISI
+   DİJİTAL MENÜ
    ===================================================== */
 
 .subtitle {
@@ -319,19 +271,12 @@ body::before {
     background:
         linear-gradient(
             90deg,
-
             transparent,
-
             #8f6828,
-
             #d2a957,
-
             #ffe3a0,
-
             #d2a957,
-
             #8f6828,
-
             transparent
         );
 
@@ -339,8 +284,81 @@ body::before {
 
     box-shadow:
         0 0 6px rgba(218, 170, 80, 0.65),
-
         0 0 14px rgba(218, 170, 80, 0.30);
+}
+
+
+/* =====================================================
+   KALORİ HESAPLAYICI
+   ===================================================== */
+
+.calorie-button-wrapper {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin: 0 0 10px;
+
+    text-align: center;
+}
+
+.calorie-button {
+    border: 1px solid #d5ae64;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8f6828,
+            #c59a4a,
+            #a8792e
+        );
+
+    color: #ffffff;
+
+    border-radius: 999px;
+
+    padding: 10px 22px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 10px rgba(176, 138, 69, 0.35),
+        0 4px 12px rgba(0, 0, 0, 0.30);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.calorie-button:hover {
+    transform: translateY(-2px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #a8792e,
+            #d2a957,
+            #b88736
+        );
+
+    box-shadow:
+        0 0 18px rgba(208, 168, 92, 0.60),
+        0 6px 18px rgba(0, 0, 0, 0.40);
+}
+
+.calorie-button:active {
+    transform: scale(0.97);
 }
 
 
@@ -353,7 +371,16 @@ body::before {
 
     gap: 8px;
 
-    overflow-x: auto;
+    /*
+       TÜM KATEGORİLER ORTADA
+    */
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    overflow-x: visible;
 
     padding: 6px 0 14px;
 
@@ -362,11 +389,6 @@ body::before {
     position: sticky;
 
     top: 0;
-
-    /*
-       ÖNEMLİ:
-       Siyah arka plan yok.
-    */
 
     background: transparent;
 
@@ -408,9 +430,6 @@ body::before {
         border-color 0.2s;
 }
 
-
-/* HOVER */
-
 .category-btn:hover {
     background: #252525;
 
@@ -420,18 +439,12 @@ body::before {
         0 0 8px rgba(176, 138, 69, 0.25);
 }
 
-
-/* AKTİF KATEGORİ */
-
 .category-btn.active {
     background:
         linear-gradient(
             135deg,
-
             #8f6828,
-
             #c59a4a,
-
             #a8792e
         );
 
@@ -481,18 +494,12 @@ body::before {
         box-shadow 0.15s;
 }
 
-
-/* HOVER */
-
 .product:hover {
     transform: translateY(-2px);
 
     box-shadow:
         0 8px 24px rgba(0, 0, 0, 0.50);
 }
-
-
-/* DOKUNMA */
 
 .product:active {
     transform: scale(0.98);
@@ -545,9 +552,6 @@ body::before {
     padding: 11px 12px 13px;
 }
 
-
-/* ÜRÜN ADI */
-
 .product-name {
     font-weight: 700;
 
@@ -555,9 +559,6 @@ body::before {
 
     color: #191919;
 }
-
-
-/* ÜRÜN FİYATI */
 
 .product-price {
     margin-top: 6px;
@@ -589,9 +590,6 @@ body::before {
 
     padding: 18px;
 }
-
-
-/* MODAL AÇIK */
 
 .modal.show {
     display: flex;
@@ -645,9 +643,6 @@ body::before {
     padding: 18px;
 }
 
-
-/* KATEGORİ */
-
 .modal-category {
     font-size: 13px;
 
@@ -656,9 +651,6 @@ body::before {
     font-weight: 700;
 }
 
-
-/* ÜRÜN BAŞLIĞI */
-
 .modal-body h2 {
     margin: 5px 0 8px;
 
@@ -666,9 +658,6 @@ body::before {
 
     color: #191919;
 }
-
-
-/* MODAL FİYAT */
 
 .modal-price {
     font-size: 22px;
@@ -680,13 +669,35 @@ body::before {
     color: #a07835;
 }
 
-
-/* AÇIKLAMA */
-
 .modal-body p {
     line-height: 1.55;
 
     color: #555555;
+}
+
+
+/* =====================================================
+   ALERJEN / KALORİ
+   ===================================================== */
+
+.product-meta {
+    margin-top: 18px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid #dddddd;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #333333;
+}
+
+.product-meta strong {
+    font-weight: 800;
+
+    color: #191919;
 }
 
 
@@ -727,12 +738,12 @@ body::before {
 
 @media (max-width: 900px) {
 
-    /*
-       Tabletlerde arka planı biraz azalt.
-    */
-
     body::before {
         opacity: 0.35;
+    }
+
+    .categories {
+        justify-content: center;
     }
 }
 
@@ -808,14 +819,28 @@ body::before {
     }
 
 
+    /* KALORİ BUTONU */
+
+    .calorie-button-wrapper {
+        margin: 0 0 9px;
+    }
+
+    .calorie-button {
+        font-size: 13px;
+
+        padding: 10px 20px;
+    }
+
+
     /* KATEGORİLER */
 
     .categories {
         gap: 6px;
 
+        justify-content: center;
+
         padding-bottom: 12px;
     }
-
 
     .category-btn {
         padding: 9px 13px;
@@ -862,7 +887,6 @@ body::before {
         padding: 10px;
     }
 
-
     .modal-body h2 {
         font-size: 22px;
     }
@@ -879,11 +903,9 @@ body::before {
         width: 75px;
     }
 
-
     .logo {
         font-size: 28px;
     }
-
 
     .subtitle {
         font-size: 10px;
@@ -891,82 +913,20 @@ body::before {
         letter-spacing: 2px;
     }
 
+    .calorie-button {
+        font-size: 12px;
+
+        padding: 9px 18px;
+    }
+
+    .category-btn {
+        padding: 8px 11px;
+
+        font-size: 12px;
+    }
 
     .product-image,
     .no-image {
         height: 125px;
     }
-    .product-meta {
-    margin-top: 18px;
-    padding-top: 14px;
-    border-top: 1px solid #dddddd;
-    font-size: 14px;
-    line-height: 1.8;
-    color: #333333;
-}
-
-.product-meta strong {
-    font-weight: 800;
-    color: #191919;
-}
-    /* ================================
-   KALORİ HESAPLAYICI BUTONU
-================================ */
-
-.calorie-button-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 4px 0 12px;
-}
-
-.calorie-button {
-    border: 1px solid rgba(176, 138, 69, 0.8);
-    background: linear-gradient(
-        135deg,
-        #b08a45,
-        #d0a85c,
-        #b08a45
-    );
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 11px 24px;
-    border-radius: 999px;
-    cursor: pointer;
-
-    box-shadow:
-        0 0 10px rgba(176, 138, 69, 0.35),
-        0 4px 12px rgba(0, 0, 0, 0.25);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.calorie-button:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 0 18px rgba(208, 168, 92, 0.65),
-        0 6px 18px rgba(0, 0, 0, 0.35);
-}
-
-.calorie-button:active {
-    transform: scale(0.97);
-}
-
-/* TELEFON */
-@media (max-width: 520px) {
-
-    .calorie-button-wrapper {
-        margin: 2px 0 10px;
-    }
-
-    .calorie-button {
-        font-size: 13px;
-        padding: 10px 20px;
-    }
-}
 }
