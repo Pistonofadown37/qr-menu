@@ -34,6 +34,42 @@ const menuData = {
       ingredients: "Yoğurt, su, tuz",
       price: 60,
       image: "images/ayran.jpg"
+   },
+    {
+      id: 4,
+      category_id: "ara-sicak",
+      name: "Kalamar",
+      description: "Yoğurt, beyaz peynir ve taze otlarla hazırlanan klasik meze.",
+      ingredients: "Yoğurt, beyaz peynir, sarımsak, dereotu",
+      price: 180,
+      image: "images/haydari.jpg"
+    },
+    {
+      id: 5,
+      category_id: "ara-sicak",
+      name: "Musakka",
+      description: "Yoğurt, beyaz peynir ve taze otlarla hazırlanan klasik meze.",
+      ingredients: "Yoğurt, beyaz peynir, sarımsak, dereotu",
+      price: 180,
+      image: "images/haydari.jpg"
+    },
+    {
+      id: 6,
+      category_id: "ana-yemek",
+      name: "Hamsi",
+      description: "Yoğurt, beyaz peynir ve taze otlarla hazırlanan klasik meze.",
+      ingredients: "Yoğurt, beyaz peynir, sarımsak, dereotu",
+      price: 180,
+      image: "images/haydari.jpg"
+    },
+    {
+      id: 7,
+      category_id: "tatli",
+      name: "Sütlaç",
+      description: "Yoğurt, beyaz peynir ve taze otlarla hazırlanan klasik meze.",
+      ingredients: "Yoğurt, beyaz peynir, sarımsak, dereotu",
+      price: 180,
+      image: "images/haydari.jpg"
     }
   ]
 };
