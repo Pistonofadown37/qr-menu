@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <title>İBO CHEF | Dijital Menü</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div class="logo">İBO CHEF</div>
+      <div class="subtitle">Dijital Menü</div>
+    </header>
+
+    <nav id="categories" class="categories"></nav>
+    <section id="products" class="products"></section>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <button id="closeModal" class="close" aria-label="Kapat">×</button>
+      <img id="modalImage" class="modal-image" alt="">
+      <div class="modal-body">
+        <div id="modalCategory" class="modal-category"></div>
+        <h2 id="modalName"></h2>
+        <div id="modalPrice" class="modal-price"></div>
+        <p id="modalDescription"></p>
+        <p id="modalIngredients"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="menu.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
