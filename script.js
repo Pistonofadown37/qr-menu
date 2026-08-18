@@ -263,19 +263,6 @@ function renderCategories() {
         categoriesEl.appendChild(btn);
 
     });
-
-
-    /* KALORİ HESAPLAYICI */
-
-    const calorieButton = document.createElement("button");
-
-    calorieButton.className = "calorie-button";
-
-    calorieButton.textContent = "Kalori Hesaplayıcı";
-
-    calorieButton.onclick = openCalorieCalculator;
-
-    categoriesEl.appendChild(calorieButton);
 }
 
 
