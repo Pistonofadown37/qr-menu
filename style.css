@@ -45,7 +45,7 @@ body {
 
 body::before {
     content: "";
-    position: fixed;
+    position: absolute;
     top: 280px;
     left: 0;
     width: 100%;
@@ -53,10 +53,15 @@ body::before {
 
     background-image: url("images/arka-plan.png");
     background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% 100%;
+
+    /* Görselin oranını bozma */
+    background-size: auto 335px;
+
+    /* Görselin tamamını yatayda ortala */
+    background-position: center top;
 
     opacity: 0.22;
-    z-index: -1;
+
+    z-index: 0;
     pointer-events: none;
 }
