@@ -5,6 +5,7 @@
 html {
     margin: 0;
     padding: 0;
+    background: #050505;
 }
 
 body {
@@ -46,46 +47,51 @@ body::before {
 
     background-position: center top;
 
-    background-size: 100% auto;
+    background-size: cover;
 
-    opacity: 0.90;
+    opacity: 0.72;
 
     /*
-       SOL VE SAĞDAN ORTAYA DOĞRU
-       YUMUŞAK ŞEFFAFLAŞMA
+       GÖRSELİN ORTAYA DOĞRU
+       YUMUŞAK ŞEFFAFLAŞMASI
     */
 
     -webkit-mask-image: linear-gradient(
         to right,
 
         #000000 0%,
-        #000000 18%,
+        #000000 15%,
 
-        rgba(0,0,0,0.95) 23%,
+        rgba(0, 0, 0, 0.95) 22%,
 
-        rgba(0,0,0,0.80) 27%,
+        rgba(0, 0, 0, 0.80) 28%,
 
-        rgba(0,0,0,0.55) 31%,
+        rgba(0, 0, 0, 0.60) 33%,
 
-        rgba(0,0,0,0.30) 35%,
+        rgba(0, 0, 0, 0.40) 37%,
 
-        rgba(0,0,0,0.10) 39%,
+        rgba(0, 0, 0, 0.20) 41%,
 
-        transparent 43%,
+        rgba(0, 0, 0, 0.08) 44%,
 
-        transparent 57%,
+        transparent 48%,
 
-        rgba(0,0,0,0.10) 61%,
+        transparent 52%,
 
-        rgba(0,0,0,0.30) 65%,
+        rgba(0, 0, 0, 0.08) 56%,
 
-        rgba(0,0,0,0.55) 69%,
+        rgba(0, 0, 0, 0.20) 59%,
 
-        rgba(0,0,0,0.80) 73%,
+        rgba(0, 0, 0, 0.40) 63%,
 
-        rgba(0,0,0,0.95) 77%,
+        rgba(0, 0, 0, 0.60) 67%,
 
-        #000000 82%,
+        rgba(0, 0, 0, 0.80) 72%,
+
+        rgba(0, 0, 0, 0.95) 78%,
+
+        #000000 85%,
+
         #000000 100%
     );
 
@@ -93,33 +99,38 @@ body::before {
         to right,
 
         #000000 0%,
-        #000000 18%,
+        #000000 15%,
 
-        rgba(0,0,0,0.95) 23%,
+        rgba(0, 0, 0, 0.95) 22%,
 
-        rgba(0,0,0,0.80) 27%,
+        rgba(0, 0, 0, 0.80) 28%,
 
-        rgba(0,0,0,0.55) 31%,
+        rgba(0, 0, 0, 0.60) 33%,
 
-        rgba(0,0,0,0.30) 35%,
+        rgba(0, 0, 0, 0.40) 37%,
 
-        rgba(0,0,0,0.10) 39%,
+        rgba(0, 0, 0, 0.20) 41%,
 
-        transparent 43%,
+        rgba(0, 0, 0, 0.08) 44%,
 
-        transparent 57%,
+        transparent 48%,
 
-        rgba(0,0,0,0.10) 61%,
+        transparent 52%,
 
-        rgba(0,0,0,0.30) 65%,
+        rgba(0, 0, 0, 0.08) 56%,
 
-        rgba(0,0,0,0.55) 69%,
+        rgba(0, 0, 0, 0.20) 59%,
 
-        rgba(0,0,0,0.80) 73%,
+        rgba(0, 0, 0, 0.40) 63%,
 
-        rgba(0,0,0,0.95) 77%,
+        rgba(0, 0, 0, 0.60) 67%,
 
-        #000000 82%,
+        rgba(0, 0, 0, 0.80) 72%,
+
+        rgba(0, 0, 0, 0.95) 78%,
+
+        #000000 85%,
+
         #000000 100%
     );
 
@@ -130,7 +141,7 @@ body::before {
 
 
 /* =====================================================
-   ANA MENÜ
+   ANA MENÜ ALANI
    ===================================================== */
 
 .container {
@@ -144,7 +155,13 @@ body::before {
 
     z-index: 2;
 
-    background: #050505;
+    /*
+       ÖNEMLİ:
+       Burada background kullanmıyoruz.
+       Böylece arka plan geçişi görünüyor.
+    */
+
+    background: transparent;
 
     min-height: 100vh;
 }
@@ -168,7 +185,7 @@ body::before {
 
 
 /* =====================================================
-   LOGO ARKASI IŞIK
+   LOGO ARKASI ALTIN IŞIK
    ===================================================== */
 
 .header::before {
@@ -237,7 +254,7 @@ body::before {
 
 
 /* =====================================================
-   İBO CHEF
+   İBO CHEF YAZISI
    ===================================================== */
 
 .logo {
@@ -263,7 +280,7 @@ body::before {
 
 
 /* =====================================================
-   DİJİTAL MENÜ
+   DİJİTAL MENÜ YAZISI
    ===================================================== */
 
 .subtitle {
@@ -346,7 +363,12 @@ body::before {
 
     top: 0;
 
-    background: #050505;
+    /*
+       ÖNEMLİ:
+       Siyah arka plan yok.
+    */
+
+    background: transparent;
 
     z-index: 5;
 
@@ -399,7 +421,7 @@ body::before {
 }
 
 
-/* AKTİF */
+/* AKTİF KATEGORİ */
 
 .category-btn.active {
     background:
@@ -535,7 +557,7 @@ body::before {
 }
 
 
-/* FİYAT */
+/* ÜRÜN FİYATI */
 
 .product-price {
     margin-top: 6px;
@@ -646,7 +668,7 @@ body::before {
 }
 
 
-/* FİYAT */
+/* MODAL FİYAT */
 
 .modal-price {
     font-size: 22px;
@@ -706,12 +728,11 @@ body::before {
 @media (max-width: 900px) {
 
     /*
-       Mobil/tablet cihazlarda yan görseli
-       kapatıyoruz.
+       Tabletlerde arka planı biraz azalt.
     */
 
     body::before {
-        display: none;
+        opacity: 0.35;
     }
 }
 
@@ -736,7 +757,7 @@ body::before {
     }
 
 
-    /* IŞIK */
+    /* LOGO IŞIĞI */
 
     .header::before {
         width: 380px;
@@ -767,7 +788,7 @@ body::before {
     }
 
 
-    /* ALT YAZI */
+    /* DİJİTAL MENÜ */
 
     .subtitle {
         font-size: 11px;
