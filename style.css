@@ -10,18 +10,11 @@ html {
 body {
     margin: 0;
     padding: 0;
-
     background: #f5f5f5;
     color: #191919;
-
     font-family: Arial, Helvetica, sans-serif;
-
     position: relative;
-
-    /* Pseudo elementin sayfa dışına taşmasını engeller */
     overflow-x: hidden;
-
-    /* Arka plan ile menü katmanlarını ayırır */
     isolation: isolate;
 }
 
@@ -39,35 +32,24 @@ body::before {
     left: 0;
 
     width: 100%;
-
-    /*
-       Görselin orijinal oranını koruyoruz.
-       1536x1024 görsel kesinlikle ezilmeyecek.
-    */
     height: 1024px;
 
     background-image: url("images/arka-plan.png");
-
     background-repeat: no-repeat;
 
-    /*
-       Görsel ekranın genişliğine göre ölçeklenir.
-       Oranı kesinlikle bozulmaz.
-    */
+    /* Görselin oranını korur */
     background-size: 100% auto;
-
     background-position: center top;
 
-    opacity: 0.25;
+    opacity: 0.50;
 
     z-index: 0;
-
     pointer-events: none;
 }
 
 
 /* =====================================================
-   ANA MENÜ ALANI
+   ANA MENÜ
    ===================================================== */
 
 .container {
@@ -81,10 +63,6 @@ body::before {
 
     z-index: 1;
 
-    /*
-       Arka plan görselinin ortasını tamamen kapatır.
-       Böylece görsel sadece sağda ve solda görünür.
-    */
     background: #f5f5f5;
 
     min-height: 100vh;
@@ -92,22 +70,31 @@ body::before {
 
 
 /* =====================================================
-   ÜST KISIM
+   PREMIUM ÜST KISIM
    ===================================================== */
 
 .header {
     text-align: center;
 
-    padding: 18px 0 22px;
+    padding: 28px 0 24px;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(176, 138, 69, 0.10) 0%,
+            rgba(245, 245, 245, 0) 68%
+        );
 }
 
 
 /* =====================================================
-   PNG LOGO
+   LOGO
    ===================================================== */
 
 .logo-image {
-    width: 110px;
+    width: 125px;
 
     max-width: 50%;
 
@@ -115,7 +102,14 @@ body::before {
 
     display: block;
 
-    margin: 0 auto 6px;
+    margin: 0 auto 8px;
+
+    filter:
+        drop-shadow(
+            0 3px 3px rgba(0, 0, 0, 0.18)
+        );
+
+    transition: transform 0.2s;
 }
 
 
@@ -124,13 +118,19 @@ body::before {
    ===================================================== */
 
 .logo {
-    font-size: 50px;
+    font-size: 54px;
 
-    font-weight: 800;
+    font-weight: 900;
 
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 
-    line-height: 1.1;
+    line-height: 1;
+
+    color: #171717;
+
+    text-shadow:
+        0 2px 0 #ffffff,
+        0 4px 10px rgba(0, 0, 0, 0.10);
 }
 
 
@@ -139,11 +139,46 @@ body::before {
    ===================================================== */
 
 .subtitle {
-    margin-top: 5px;
+    margin-top: 12px;
 
-    color: #777;
+    color: #8a8a8a;
 
-    font-size: 15px;
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   PREMIUM ALTIN ÇİZGİ
+   ===================================================== */
+
+.header::after {
+    content: "";
+
+    display: block;
+
+    width: 150px;
+
+    height: 2px;
+
+    margin: 18px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #b08a45,
+            #d2ad63,
+            #b08a45,
+            transparent
+        );
+
+    border-radius: 50%;
 }
 
 
@@ -158,7 +193,7 @@ body::before {
 
     overflow-x: auto;
 
-    padding: 4px 0 14px;
+    padding: 6px 0 14px;
 
     scrollbar-width: none;
 
@@ -169,6 +204,8 @@ body::before {
     background: #f5f5f5;
 
     z-index: 5;
+
+    margin-top: 2px;
 }
 
 .categories::-webkit-scrollbar {
@@ -197,7 +234,20 @@ body::before {
 
     cursor: pointer;
 
-    transition: background 0.2s;
+    transition:
+        background 0.2s,
+        transform 0.15s,
+        box-shadow 0.2s;
+}
+
+
+/* BUTON ÜZERİNE GELİNCE */
+
+.category-btn:hover {
+    background: #292929;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -205,6 +255,11 @@ body::before {
 
 .category-btn.active {
     background: #b08a45;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 3px 8px rgba(176, 138, 69, 0.25);
 }
 
 
@@ -215,7 +270,8 @@ body::before {
 .products {
     display: grid;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
     gap: 14px;
 }
@@ -297,7 +353,7 @@ body::before {
 
 
 /* =====================================================
-   ÜRÜN BİLGİSİ
+   ÜRÜN BİLGİLERİ
    ===================================================== */
 
 .product-info {
@@ -326,7 +382,7 @@ body::before {
 
 
 /* =====================================================
-   ÜRÜN DETAY PENCERESİ
+   ÜRÜN DETAY MODALI
    ===================================================== */
 
 .modal {
@@ -371,6 +427,9 @@ body::before {
     background: #ffffff;
 
     border-radius: 18px;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.30);
 }
 
 
@@ -441,7 +500,7 @@ body::before {
 
 
 /* =====================================================
-   KAPATMA BUTONU
+   MODAL KAPATMA BUTONU
    ===================================================== */
 
 .close {
@@ -478,13 +537,12 @@ body::before {
 @media (max-width: 900px) {
 
     /*
-       Tablet ekranında yan görseli kaldırıyoruz.
+       Tablet ekranlarında yan arka planı gizle.
     */
 
     body::before {
         display: none;
     }
-
 }
 
 
@@ -501,21 +559,50 @@ body::before {
     }
 
 
+    /* ÜST KISIM */
+
+    .header {
+        padding: 20px 0 20px;
+    }
+
+
     /* LOGO */
 
     .logo-image {
-        width: 85px;
+        width: 90px;
 
         max-width: 45%;
+
+        margin-bottom: 7px;
     }
 
 
     /* İBO CHEF */
 
     .logo {
-        font-size: 32px;
+        font-size: 34px;
 
         letter-spacing: 1px;
+    }
+
+
+    /* DİJİTAL MENÜ */
+
+    .subtitle {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+
+        margin-top: 10px;
+    }
+
+
+    /* ALTIN ÇİZGİ */
+
+    .header::after {
+        width: 110px;
+
+        margin-top: 15px;
     }
 
 
@@ -538,7 +625,8 @@ body::before {
     /* ÜRÜNLER */
 
     .products {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
 
         gap: 10px;
     }
@@ -576,12 +664,11 @@ body::before {
     .modal-body h2 {
         font-size: 22px;
     }
-
 }
 
 
 /* =====================================================
-   ÇOK KÜÇÜK TELEFONLAR
+   ÇOK KÜÇÜK TELEFON
    ===================================================== */
 
 @media (max-width: 360px) {
@@ -596,9 +683,15 @@ body::before {
     }
 
 
+    .subtitle {
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+
+
     .product-image,
     .no-image {
         height: 125px;
     }
-
 }
