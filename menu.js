@@ -17,7 +17,7 @@ const menuData = {
       description: "Izgara levrek, mevsim yeşillikleri ve limon ile servis edilir.",
       ingredients: "Levrek, zeytinyağı, limon, baharat",
       price: 850,
-      calories: 420,
+      calories: 950,
       image: "images/levrek.jpg"
     },
 
@@ -28,7 +28,7 @@ const menuData = {
       description: "Yoğurt, beyaz peynir ve taze otlarla hazırlanan klasik meze.",
       ingredients: "Yoğurt, beyaz peynir, sarımsak, dereotu",
       price: 180,
-      calories: 420,
+      calories: 250,
       image: "images/haydari.jpg"
     },
 
@@ -39,7 +39,7 @@ const menuData = {
       description: "Soğuk ayran.",
       ingredients: "Yoğurt, su, tuz",
       price: 60,
-      calories: 420,
+      calories: 100,
       image: "images/ayran.jpg"
     },
 
@@ -50,7 +50,7 @@ const menuData = {
       description: "Yoğurt, beyaz peynir ve taze otlarla hazırlanan klasik meze.",
       ingredients: "Yoğurt, beyaz peynir, sarımsak, dereotu",
       price: 180,
-      calories: 420,
+      calories: 950,
       image: "images/haydari.jpg"
     },
 
@@ -61,7 +61,7 @@ const menuData = {
       description: "Yoğurt, beyaz peynir ve taze otlarla hazırlanan klasik meze.",
       ingredients: "Yoğurt, beyaz peynir, sarımsak, dereotu",
       price: 180,
-      calories: 420,
+      calories: 872,
       image: "images/haydari.jpg"
     },
 
@@ -72,7 +72,7 @@ const menuData = {
       description: "Yoğurt, beyaz peynir ve taze otlarla hazırlanan klasik meze.",
       ingredients: "Yoğurt, beyaz peynir, sarımsak, dereotu",
       price: 180,
-      calories: 420,
+      calories: 800,
       image: "images/dana-ciger.jpg"
     },
 
@@ -83,7 +83,7 @@ const menuData = {
       description: "Yoğurt, beyaz peynir ve taze otlarla hazırlanan klasik meze.",
       ingredients: "Yoğurt, beyaz peynir, sarımsak, dereotu",
       price: 180,
-      calories: 420,
+      calories: 700,
       image: "images/firin-sutlac.jpg"
     },
 
@@ -94,7 +94,7 @@ const menuData = {
       description: "Soğuk ayran.",
       ingredients: "Yoğurt, su, tuz",
       price: 60,
-      calories: 420,
+      calories: 320,
       image: "images/cola.jpg"
     }
 
