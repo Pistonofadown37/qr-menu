@@ -72,7 +72,7 @@ const menuData = {
       image: "images/firin-sutlac.jpg"
     },
     {
-      id: 3,
+      id: 8,
       category_id: "icecek",
       name: "Kola",
       description: "Soğuk ayran.",
