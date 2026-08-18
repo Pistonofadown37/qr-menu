@@ -12,6 +12,7 @@ body {
     padding: 0;
 
     background: #050505;
+
     color: #ffffff;
 
     font-family: Arial, Helvetica, sans-serif;
@@ -25,43 +26,111 @@ body {
 
 
 /* =====================================================
-   YAN ARKA PLAN GÖRSELİ
+   ARKA PLAN GÖRSELİ
    ===================================================== */
 
 body::before {
     content: "";
 
-    position: absolute;
+    position: fixed;
 
     top: 0;
     left: 0;
 
     width: 100%;
-
-    /* Sayfanın tamamı boyunca devam etsin */
-    height: 100%;
+    height: 100vh;
 
     background-image: url("images/arka-plan.png");
 
     background-repeat: no-repeat;
 
-    /*
-       Görsel yatayda ekran genişliğine oturur.
-       Oranı korunur.
-    */
-    background-size: 100% auto;
-
     background-position: center top;
 
-    opacity: 0.45;
+    background-size: 100% auto;
+
+    opacity: 0.90;
+
+    /*
+       SOL VE SAĞDAN ORTAYA DOĞRU
+       YUMUŞAK ŞEFFAFLAŞMA
+    */
+
+    -webkit-mask-image: linear-gradient(
+        to right,
+
+        #000000 0%,
+        #000000 18%,
+
+        rgba(0,0,0,0.95) 23%,
+
+        rgba(0,0,0,0.80) 27%,
+
+        rgba(0,0,0,0.55) 31%,
+
+        rgba(0,0,0,0.30) 35%,
+
+        rgba(0,0,0,0.10) 39%,
+
+        transparent 43%,
+
+        transparent 57%,
+
+        rgba(0,0,0,0.10) 61%,
+
+        rgba(0,0,0,0.30) 65%,
+
+        rgba(0,0,0,0.55) 69%,
+
+        rgba(0,0,0,0.80) 73%,
+
+        rgba(0,0,0,0.95) 77%,
+
+        #000000 82%,
+        #000000 100%
+    );
+
+    mask-image: linear-gradient(
+        to right,
+
+        #000000 0%,
+        #000000 18%,
+
+        rgba(0,0,0,0.95) 23%,
+
+        rgba(0,0,0,0.80) 27%,
+
+        rgba(0,0,0,0.55) 31%,
+
+        rgba(0,0,0,0.30) 35%,
+
+        rgba(0,0,0,0.10) 39%,
+
+        transparent 43%,
+
+        transparent 57%,
+
+        rgba(0,0,0,0.10) 61%,
+
+        rgba(0,0,0,0.30) 65%,
+
+        rgba(0,0,0,0.55) 69%,
+
+        rgba(0,0,0,0.80) 73%,
+
+        rgba(0,0,0,0.95) 77%,
+
+        #000000 82%,
+        #000000 100%
+    );
 
     z-index: 0;
 
     pointer-events: none;
 }
 
+
 /* =====================================================
-   ANA MENÜ ALANI
+   ANA MENÜ
    ===================================================== */
 
 .container {
@@ -73,12 +142,8 @@ body::before {
 
     position: relative;
 
-    z-index: 1;
+    z-index: 2;
 
-    /*
-       Ortadaki menü alanı siyah.
-       Yanlardaki arka plan görseli görünmeye devam eder.
-    */
     background: #050505;
 
     min-height: 100vh;
@@ -86,7 +151,7 @@ body::before {
 
 
 /* =====================================================
-   PREMIUM HEADER
+   HEADER
    ===================================================== */
 
 .header {
@@ -160,8 +225,12 @@ body::before {
     margin: 0 auto 8px;
 
     filter:
-        drop-shadow(0 0 5px rgba(255, 210, 120, 0.35))
-        drop-shadow(0 4px 5px rgba(0, 0, 0, 0.45));
+        drop-shadow(
+            0 0 5px rgba(255, 210, 120, 0.45)
+        )
+        drop-shadow(
+            0 4px 6px rgba(0, 0, 0, 0.55)
+        );
 
     transition: transform 0.2s;
 }
@@ -183,9 +252,13 @@ body::before {
     color: #ffffff;
 
     text-shadow:
-        0 0 5px rgba(255, 255, 255, 0.35),
-        0 0 12px rgba(255, 210, 120, 0.25),
-        0 4px 10px rgba(0, 0, 0, 0.55);
+        0 0 5px rgba(255, 255, 255, 0.45),
+
+        0 0 12px rgba(255, 210, 120, 0.35),
+
+        0 0 25px rgba(218, 170, 80, 0.20),
+
+        0 4px 10px rgba(0, 0, 0, 0.65);
 }
 
 
@@ -207,12 +280,12 @@ body::before {
     text-transform: uppercase;
 
     text-shadow:
-        0 1px 4px rgba(0, 0, 0, 0.6);
+        0 1px 5px rgba(0, 0, 0, 0.7);
 }
 
 
 /* =====================================================
-   ALTIN DEKORATİF ÇİZGİ
+   ALTIN ÇİZGİ
    ===================================================== */
 
 .header::after {
@@ -248,8 +321,9 @@ body::before {
     border-radius: 50%;
 
     box-shadow:
-        0 0 6px rgba(218, 170, 80, 0.55),
-        0 0 14px rgba(218, 170, 80, 0.25);
+        0 0 6px rgba(218, 170, 80, 0.65),
+
+        0 0 14px rgba(218, 170, 80, 0.30);
 }
 
 
@@ -313,7 +387,7 @@ body::before {
 }
 
 
-/* BUTON HOVER */
+/* HOVER */
 
 .category-btn:hover {
     background: #252525;
@@ -321,18 +395,21 @@ body::before {
     border-color: #8f6828;
 
     box-shadow:
-        0 0 8px rgba(176, 138, 69, 0.20);
+        0 0 8px rgba(176, 138, 69, 0.25);
 }
 
 
-/* AKTİF KATEGORİ */
+/* AKTİF */
 
 .category-btn.active {
     background:
         linear-gradient(
             135deg,
+
             #8f6828,
+
             #c59a4a,
+
             #a8792e
         );
 
@@ -341,7 +418,7 @@ body::before {
     color: #ffffff;
 
     box-shadow:
-        0 3px 10px rgba(176, 138, 69, 0.30);
+        0 3px 12px rgba(176, 138, 69, 0.35);
 }
 
 
@@ -373,7 +450,7 @@ body::before {
     overflow: hidden;
 
     box-shadow:
-        0 3px 14px rgba(0, 0, 0, 0.30);
+        0 3px 15px rgba(0, 0, 0, 0.40);
 
     cursor: pointer;
 
@@ -383,17 +460,17 @@ body::before {
 }
 
 
-/* ÜRÜN HOVER */
+/* HOVER */
 
 .product:hover {
     transform: translateY(-2px);
 
     box-shadow:
-        0 7px 22px rgba(0, 0, 0, 0.40);
+        0 8px 24px rgba(0, 0, 0, 0.50);
 }
 
 
-/* TELEFONDA DOKUNMA */
+/* DOKUNMA */
 
 .product:active {
     transform: scale(0.98);
@@ -401,7 +478,7 @@ body::before {
 
 
 /* =====================================================
-   ÜRÜN FOTOĞRAFI
+   ÜRÜN GÖRSELİ
    ===================================================== */
 
 .product-image {
@@ -418,7 +495,7 @@ body::before {
 
 
 /* =====================================================
-   FOTOĞRAF YOKSA
+   GÖRSEL YOK
    ===================================================== */
 
 .no-image {
@@ -458,7 +535,7 @@ body::before {
 }
 
 
-/* ÜRÜN FİYATI */
+/* FİYAT */
 
 .product-price {
     margin-top: 6px;
@@ -480,7 +557,7 @@ body::before {
 
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.82);
+    background: rgba(0, 0, 0, 0.85);
 
     z-index: 20;
 
@@ -519,12 +596,12 @@ body::before {
     border-radius: 18px;
 
     box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.60);
+        0 20px 60px rgba(0, 0, 0, 0.65);
 }
 
 
 /* =====================================================
-   MODAL FOTOĞRAFI
+   MODAL GÖRSELİ
    ===================================================== */
 
 .modal-image {
@@ -539,7 +616,7 @@ body::before {
 
 
 /* =====================================================
-   MODAL İÇERİĞİ
+   MODAL İÇERİK
    ===================================================== */
 
 .modal-body {
@@ -547,7 +624,7 @@ body::before {
 }
 
 
-/* MODAL KATEGORİ */
+/* KATEGORİ */
 
 .modal-category {
     font-size: 13px;
@@ -558,7 +635,7 @@ body::before {
 }
 
 
-/* MODAL ÜRÜN ADI */
+/* ÜRÜN BAŞLIĞI */
 
 .modal-body h2 {
     margin: 5px 0 8px;
@@ -569,7 +646,7 @@ body::before {
 }
 
 
-/* MODAL FİYAT */
+/* FİYAT */
 
 .modal-price {
     font-size: 22px;
@@ -582,7 +659,7 @@ body::before {
 }
 
 
-/* MODAL AÇIKLAMA */
+/* AÇIKLAMA */
 
 .modal-body p {
     line-height: 1.55;
@@ -592,7 +669,7 @@ body::before {
 
 
 /* =====================================================
-   MODAL KAPATMA
+   KAPATMA BUTONU
    ===================================================== */
 
 .close {
@@ -629,8 +706,8 @@ body::before {
 @media (max-width: 900px) {
 
     /*
-       Küçük ekranlarda yan görseli gizliyoruz.
-       Böylece ürünlerin okunabilirliği korunuyor.
+       Mobil/tablet cihazlarda yan görseli
+       kapatıyoruz.
     */
 
     body::before {
@@ -652,7 +729,7 @@ body::before {
     }
 
 
-    /* ÜST KISIM */
+    /* HEADER */
 
     .header {
         padding: 20px 0 20px;
@@ -690,7 +767,7 @@ body::before {
     }
 
 
-    /* DİJİTAL MENÜ */
+    /* ALT YAZI */
 
     .subtitle {
         font-size: 11px;
@@ -701,7 +778,7 @@ body::before {
     }
 
 
-    /* ALTIN ÇİZGİ */
+    /* ÇİZGİ */
 
     .header::after {
         width: 110px;
@@ -736,7 +813,7 @@ body::before {
     }
 
 
-    /* ÜRÜN FOTOĞRAFLARI */
+    /* ÜRÜN GÖRSELİ */
 
     .product-image,
     .no-image {
