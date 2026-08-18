@@ -56,11 +56,11 @@ const menuData = {
     {
       id: 6,
       category_id: "ana-yemek",
-      name: "Hamsi",
+      name: "Dana Ciğer",
       description: "Yoğurt, beyaz peynir ve taze otlarla hazırlanan klasik meze.",
       ingredients: "Yoğurt, beyaz peynir, sarımsak, dereotu",
       price: 180,
-      image: "images/haydari.jpg"
+      image: "images/dana-ciger.jpg"
     },
     {
       id: 7,
@@ -69,7 +69,16 @@ const menuData = {
       description: "Yoğurt, beyaz peynir ve taze otlarla hazırlanan klasik meze.",
       ingredients: "Yoğurt, beyaz peynir, sarımsak, dereotu",
       price: 180,
-      image: "images/haydari.jpg"
-    }
+      image: "images/firin-sutlac.jpg"
+    },
+    {
+      id: 3,
+      category_id: "icecek",
+      name: "Kola",
+      description: "Soğuk ayran.",
+      ingredients: "Yoğurt, su, tuz",
+      price: 60,
+      image: "images/cola.jpg"
+   }
   ]
 };
