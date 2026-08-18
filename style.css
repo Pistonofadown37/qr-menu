@@ -909,4 +909,64 @@ body::before {
     font-weight: 800;
     color: #191919;
 }
+    /* ================================
+   KALORİ HESAPLAYICI BUTONU
+================================ */
+
+.calorie-button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px 0 12px;
+}
+
+.calorie-button {
+    border: 1px solid rgba(176, 138, 69, 0.8);
+    background: linear-gradient(
+        135deg,
+        #b08a45,
+        #d0a85c,
+        #b08a45
+    );
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 11px 24px;
+    border-radius: 999px;
+    cursor: pointer;
+
+    box-shadow:
+        0 0 10px rgba(176, 138, 69, 0.35),
+        0 4px 12px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.calorie-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 18px rgba(208, 168, 92, 0.65),
+        0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.calorie-button:active {
+    transform: scale(0.97);
+}
+
+/* TELEFON */
+@media (max-width: 520px) {
+
+    .calorie-button-wrapper {
+        margin: 2px 0 10px;
+    }
+
+    .calorie-button {
+        font-size: 13px;
+        padding: 10px 20px;
+    }
+}
 }
