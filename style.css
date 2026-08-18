@@ -10,17 +10,18 @@ html {
 body {
     margin: 0;
     padding: 0;
+
     background: #f5f5f5;
     color: #191919;
+
     font-family: Arial, Helvetica, sans-serif;
 
     position: relative;
-    isolation: isolate;
 }
 
 
 /* =====================================================
-   SAĞ - SOL ARKA PLAN GÖRSELİ
+   ARKA PLAN GÖRSELİ
    ===================================================== */
 
 body::before {
@@ -32,21 +33,21 @@ body::before {
     left: 0;
 
     width: 100%;
-    height: 335px;
+    height: 500px;
 
     background-image: url("images/arka-plan.png");
 
     background-repeat: no-repeat;
 
     /*
-       Görsel ekranı doldurur.
-       Ortadaki menü alanı tarafından kapatılır.
-       Böylece görselin sadece sağ ve sol tarafı görünür.
+       1536x1024 görselin oranını koruyor.
+       Görsel yatay olarak ekran genişliğine oturuyor.
     */
-    background-size: cover;
-    background-position: center center;
+    background-size: 100% auto;
 
-    opacity: 0.22;
+    background-position: center top;
+
+    opacity: 0.25;
 
     z-index: 0;
 
@@ -55,7 +56,7 @@ body::before {
 
 
 /* =====================================================
-   ANA MENÜ
+   ANA MENÜ ALANI
    ===================================================== */
 
 .container {
@@ -69,6 +70,9 @@ body::before {
 
     z-index: 1;
 
+    /*
+       Arka plan görselinin orta kısmını kapatır.
+    */
     background: #f5f5f5;
 
     min-height: 100vh;
@@ -76,7 +80,7 @@ body::before {
 
 
 /* =====================================================
-   ÜST LOGO ALANI
+   ÜST KISIM
    ===================================================== */
 
 .header {
@@ -86,7 +90,9 @@ body::before {
 }
 
 
-/* PNG LOGO */
+/* =====================================================
+   PNG LOGO
+   ===================================================== */
 
 .logo-image {
     width: 110px;
@@ -101,7 +107,9 @@ body::before {
 }
 
 
-/* İBO CHEF YAZISI */
+/* =====================================================
+   İBO CHEF YAZISI
+   ===================================================== */
 
 .logo {
     font-size: 50px;
@@ -114,7 +122,9 @@ body::before {
 }
 
 
-/* DİJİTAL MENÜ */
+/* =====================================================
+   DİJİTAL MENÜ YAZISI
+   ===================================================== */
 
 .subtitle {
     margin-top: 5px;
@@ -154,10 +164,12 @@ body::before {
 }
 
 
-/* KATEGORİ BUTONLARI */
+/* =====================================================
+   KATEGORİ BUTONLARI
+   ===================================================== */
 
 .category-btn {
-    border: none;
+    border: 0;
 
     background: #171717;
 
@@ -195,7 +207,9 @@ body::before {
 }
 
 
-/* ÜRÜN KARTI */
+/* =====================================================
+   ÜRÜN KARTI
+   ===================================================== */
 
 .product {
     background: #fff;
@@ -204,7 +218,8 @@ body::before {
 
     overflow: hidden;
 
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    box-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.08);
 
     cursor: pointer;
 
@@ -216,7 +231,9 @@ body::before {
 }
 
 
-/* ÜRÜN FOTOĞRAFI */
+/* =====================================================
+   ÜRÜN FOTOĞRAFI
+   ===================================================== */
 
 .product-image {
     width: 100%;
@@ -231,7 +248,9 @@ body::before {
 }
 
 
-/* FOTOĞRAF YOKSA */
+/* =====================================================
+   FOTOĞRAF YOKSA
+   ===================================================== */
 
 .no-image {
     height: 170px;
@@ -248,7 +267,9 @@ body::before {
 }
 
 
-/* ÜRÜN BİLGİLERİ */
+/* =====================================================
+   ÜRÜN BİLGİSİ
+   ===================================================== */
 
 .product-info {
     padding: 11px 12px 13px;
@@ -264,7 +285,7 @@ body::before {
 }
 
 
-/* FİYAT */
+/* ÜRÜN FİYATI */
 
 .product-price {
     margin-top: 6px;
@@ -276,7 +297,7 @@ body::before {
 
 
 /* =====================================================
-   ÜRÜN DETAY PENCERESİ
+   ÜRÜN DETAY MODALI
    ===================================================== */
 
 .modal {
@@ -298,14 +319,16 @@ body::before {
 }
 
 
-/* MODAL AÇILDIĞINDA */
+/* MODAL AÇIK */
 
 .modal.show {
     display: flex;
 }
 
 
-/* MODAL KUTUSU */
+/* =====================================================
+   MODAL KARTI
+   ===================================================== */
 
 .modal-card {
     position: relative;
@@ -322,7 +345,9 @@ body::before {
 }
 
 
-/* MODAL FOTOĞRAFI */
+/* =====================================================
+   MODAL FOTOĞRAFI
+   ===================================================== */
 
 .modal-image {
     width: 100%;
@@ -335,14 +360,16 @@ body::before {
 }
 
 
-/* MODAL İÇERİK */
+/* =====================================================
+   MODAL İÇERİĞİ
+   ===================================================== */
 
 .modal-body {
     padding: 18px;
 }
 
 
-/* KATEGORİ */
+/* MODAL KATEGORİ */
 
 .modal-category {
     font-size: 13px;
@@ -353,7 +380,7 @@ body::before {
 }
 
 
-/* ÜRÜN ADI */
+/* MODAL ÜRÜN ADI */
 
 .modal-body h2 {
     margin: 5px 0 8px;
@@ -375,7 +402,7 @@ body::before {
 }
 
 
-/* AÇIKLAMA */
+/* MODAL AÇIKLAMA */
 
 .modal-body p {
     line-height: 1.55;
@@ -384,7 +411,9 @@ body::before {
 }
 
 
-/* KAPATMA BUTONU */
+/* =====================================================
+   MODAL KAPATMA BUTONU
+   ===================================================== */
 
 .close {
     position: absolute;
@@ -397,7 +426,7 @@ body::before {
 
     height: 38px;
 
-    border: none;
+    border: 0;
 
     border-radius: 50%;
 
@@ -418,6 +447,10 @@ body::before {
    ===================================================== */
 
 @media (max-width: 900px) {
+
+    /*
+       Tablet ekranında yan arka planı kaldırıyoruz.
+    */
 
     body::before {
         display: none;
@@ -482,7 +515,7 @@ body::before {
     }
 
 
-    /* ÜRÜN FOTOĞRAFLARI */
+    /* ÜRÜN FOTOĞRAFI */
 
     .product-image,
     .no-image {
@@ -519,7 +552,7 @@ body::before {
 
 
 /* =====================================================
-   ÇOK KÜÇÜK TELEFON
+   ÇOK KÜÇÜK TELEFONLAR
    ===================================================== */
 
 @media (max-width: 360px) {
