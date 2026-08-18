@@ -7,7 +7,9 @@ const menuData = {
     { id: "tatli", name: "Tatlı" },
     { id: "icecek", name: "İçecek" }
   ],
+
   products: [
+
     {
       id: 1,
       category_id: "balik",
@@ -15,8 +17,10 @@ const menuData = {
       description: "Izgara levrek, mevsim yeşillikleri ve limon ile servis edilir.",
       ingredients: "Levrek, zeytinyağı, limon, baharat",
       price: 850,
+      calories: 420,
       image: "images/levrek.jpg"
     },
+
     {
       id: 2,
       category_id: "meze",
@@ -24,8 +28,10 @@ const menuData = {
       description: "Yoğurt, beyaz peynir ve taze otlarla hazırlanan klasik meze.",
       ingredients: "Yoğurt, beyaz peynir, sarımsak, dereotu",
       price: 180,
+      calories: 420,
       image: "images/haydari.jpg"
     },
+
     {
       id: 3,
       category_id: "icecek",
@@ -33,8 +39,10 @@ const menuData = {
       description: "Soğuk ayran.",
       ingredients: "Yoğurt, su, tuz",
       price: 60,
+      calories: 420,
       image: "images/ayran.jpg"
-   },
+    },
+
     {
       id: 4,
       category_id: "ara-sicak",
@@ -42,8 +50,10 @@ const menuData = {
       description: "Yoğurt, beyaz peynir ve taze otlarla hazırlanan klasik meze.",
       ingredients: "Yoğurt, beyaz peynir, sarımsak, dereotu",
       price: 180,
+      calories: 420,
       image: "images/haydari.jpg"
     },
+
     {
       id: 5,
       category_id: "ara-sicak",
@@ -51,8 +61,10 @@ const menuData = {
       description: "Yoğurt, beyaz peynir ve taze otlarla hazırlanan klasik meze.",
       ingredients: "Yoğurt, beyaz peynir, sarımsak, dereotu",
       price: 180,
+      calories: 420,
       image: "images/haydari.jpg"
     },
+
     {
       id: 6,
       category_id: "ana-yemek",
@@ -60,8 +72,10 @@ const menuData = {
       description: "Yoğurt, beyaz peynir ve taze otlarla hazırlanan klasik meze.",
       ingredients: "Yoğurt, beyaz peynir, sarımsak, dereotu",
       price: 180,
+      calories: 420,
       image: "images/dana-ciger.jpg"
     },
+
     {
       id: 7,
       category_id: "tatli",
@@ -69,8 +83,10 @@ const menuData = {
       description: "Yoğurt, beyaz peynir ve taze otlarla hazırlanan klasik meze.",
       ingredients: "Yoğurt, beyaz peynir, sarımsak, dereotu",
       price: 180,
+      calories: 420,
       image: "images/firin-sutlac.jpg"
     },
+
     {
       id: 8,
       category_id: "icecek",
@@ -78,7 +94,9 @@ const menuData = {
       description: "Soğuk ayran.",
       ingredients: "Yoğurt, su, tuz",
       price: 60,
+      calories: 420,
       image: "images/cola.jpg"
-   }
+    }
+
   ]
 };
