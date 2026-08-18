@@ -1,70 +1,542 @@
-*{box-sizing:border-box}
-body{margin:0;background:#f5f5f5;color:#191919;font-family:Arial,Helvetica,sans-serif}
-.container{width:min(760px,100%);margin:auto;padding:18px 14px 40px}
-.header{text-align:center;padding:18px 0 22px}
-.logo-image {
-    width: 110px;
-    max-width: 50%;
-    height: auto;
-    display: block;
-    margin: 0 auto 6px;
+* {
+    box-sizing: border-box;
 }
-.logo{font-size:50px;font-weight:800;letter-spacing:1px}
-.subtitle{margin-top:5px;color:#777}
-.categories{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;scrollbar-width:none;position:sticky;top:0;background:#f5f5f5;z-index:5}
-.categories::-webkit-scrollbar{display:none}
-.category-btn{border:0;background:#171717;color:#fff;border-radius:999px;padding:10px 16px;white-space:nowrap;font-size:14px;cursor:pointer}
-.category-btn.active{background:#b08a45}
-.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.product{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);cursor:pointer;transition:transform .15s}
-.product:active{transform:scale(.98)}
-.product-image{width:100%;height:170px;display:block;object-fit:cover;background:#eaeaea}
-.no-image{height:170px;display:flex;align-items:center;justify-content:center;background:#eaeaea;font-size:46px}
-.product-info{padding:11px 12px 13px}
-.product-name{font-weight:700;font-size:16px}
-.product-price{margin-top:6px;font-weight:700;color:#a07835}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:20;align-items:center;justify-content:center;padding:18px}
-.modal.show{display:flex}
-.modal-card{position:relative;width:min(520px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:18px}
-.modal-image{width:100%;max-height:380px;object-fit:cover;display:block}
-.modal-body{padding:18px}
-.modal-category{font-size:13px;color:#a07835;font-weight:700}
-.modal-body h2{margin:5px 0 8px;font-size:25px}
-.modal-price{font-size:22px;font-weight:800;margin-bottom:16px}
-.modal-body p{line-height:1.55;color:#555}
-.close{position:absolute;right:10px;top:8px;width:38px;height:38px;border:0;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;font-size:28px;cursor:pointer;z-index:2}
-@media(max-width:520px){.products{gap:10px}.product-image,.no-image{height:145px}.product-name{font-size:15px}.container{padding-left:10px;padding-right:10px}}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    position: relative;
+    margin: 0;
+    padding: 0;
     background: #f5f5f5;
-}
-body {
+    color: #191919;
+    font-family: Arial, Helvetica, sans-serif;
+
     position: relative;
-    background: #f5f5f5;
+    isolation: isolate;
 }
+
+
+/* =====================================================
+   SAĞ - SOL ARKA PLAN GÖRSELİ
+   ===================================================== */
 
 body::before {
     content: "";
+
     position: absolute;
+
     top: 280px;
     left: 0;
+
     width: 100%;
     height: 335px;
 
     background-image: url("images/arka-plan.png");
+
     background-repeat: no-repeat;
+
+    /*
+       Görsel ekranı doldurur.
+       Ortadaki menü alanı tarafından kapatılır.
+       Böylece görselin sadece sağ ve sol tarafı görünür.
+    */
+    background-size: cover;
     background-position: center center;
-    background-size: auto 335px;
 
     opacity: 0.22;
 
     z-index: 0;
+
     pointer-events: none;
 }
 
-/* MENÜNÜN ARKASINI TAMAMEN KAPAT */
+
+/* =====================================================
+   ANA MENÜ
+   ===================================================== */
+
 .container {
+    width: min(760px, 100%);
+
+    margin: auto;
+
+    padding: 18px 14px 40px;
+
     position: relative;
-    z-index: 10;
+
+    z-index: 1;
+
     background: #f5f5f5;
+
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   ÜST LOGO ALANI
+   ===================================================== */
+
+.header {
+    text-align: center;
+
+    padding: 18px 0 22px;
+}
+
+
+/* PNG LOGO */
+
+.logo-image {
+    width: 110px;
+
+    max-width: 50%;
+
+    height: auto;
+
+    display: block;
+
+    margin: 0 auto 6px;
+}
+
+
+/* İBO CHEF YAZISI */
+
+.logo {
+    font-size: 50px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    line-height: 1.1;
+}
+
+
+/* DİJİTAL MENÜ */
+
+.subtitle {
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   KATEGORİLER
+   ===================================================== */
+
+.categories {
+    display: flex;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding: 4px 0 14px;
+
+    scrollbar-width: none;
+
+    position: sticky;
+
+    top: 0;
+
+    background: #f5f5f5;
+
+    z-index: 5;
+}
+
+.categories::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* KATEGORİ BUTONLARI */
+
+.category-btn {
+    border: none;
+
+    background: #171717;
+
+    color: #fff;
+
+    border-radius: 999px;
+
+    padding: 10px 16px;
+
+    white-space: nowrap;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+/* AKTİF KATEGORİ */
+
+.category-btn.active {
+    background: #b08a45;
+}
+
+
+/* =====================================================
+   ÜRÜNLER
+   ===================================================== */
+
+.products {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+/* ÜRÜN KARTI */
+
+.product {
+    background: #fff;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+
+    cursor: pointer;
+
+    transition: transform 0.15s;
+}
+
+.product:active {
+    transform: scale(0.98);
+}
+
+
+/* ÜRÜN FOTOĞRAFI */
+
+.product-image {
+    width: 100%;
+
+    height: 170px;
+
+    display: block;
+
+    object-fit: cover;
+
+    background: #eaeaea;
+}
+
+
+/* FOTOĞRAF YOKSA */
+
+.no-image {
+    height: 170px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eaeaea;
+
+    font-size: 46px;
+}
+
+
+/* ÜRÜN BİLGİLERİ */
+
+.product-info {
+    padding: 11px 12px 13px;
+}
+
+
+/* ÜRÜN ADI */
+
+.product-name {
+    font-weight: 700;
+
+    font-size: 16px;
+}
+
+
+/* FİYAT */
+
+.product-price {
+    margin-top: 6px;
+
+    font-weight: 700;
+
+    color: #a07835;
+}
+
+
+/* =====================================================
+   ÜRÜN DETAY PENCERESİ
+   ===================================================== */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    z-index: 20;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 18px;
+}
+
+
+/* MODAL AÇILDIĞINDA */
+
+.modal.show {
+    display: flex;
+}
+
+
+/* MODAL KUTUSU */
+
+.modal-card {
+    position: relative;
+
+    width: min(520px, 100%);
+
+    max-height: 92vh;
+
+    overflow: auto;
+
+    background: #fff;
+
+    border-radius: 18px;
+}
+
+
+/* MODAL FOTOĞRAFI */
+
+.modal-image {
+    width: 100%;
+
+    max-height: 380px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* MODAL İÇERİK */
+
+.modal-body {
+    padding: 18px;
+}
+
+
+/* KATEGORİ */
+
+.modal-category {
+    font-size: 13px;
+
+    color: #a07835;
+
+    font-weight: 700;
+}
+
+
+/* ÜRÜN ADI */
+
+.modal-body h2 {
+    margin: 5px 0 8px;
+
+    font-size: 25px;
+}
+
+
+/* MODAL FİYAT */
+
+.modal-price {
+    font-size: 22px;
+
+    font-weight: 800;
+
+    margin-bottom: 16px;
+
+    color: #a07835;
+}
+
+
+/* AÇIKLAMA */
+
+.modal-body p {
+    line-height: 1.55;
+
+    color: #555;
+}
+
+
+/* KAPATMA BUTONU */
+
+.close {
+    position: absolute;
+
+    right: 10px;
+
+    top: 8px;
+
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    color: #fff;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    body::before {
+        display: none;
+    }
+
+}
+
+
+/* =====================================================
+   TELEFON
+   ===================================================== */
+
+@media (max-width: 520px) {
+
+    .container {
+        padding-left: 10px;
+
+        padding-right: 10px;
+    }
+
+
+    /* LOGO */
+
+    .logo-image {
+        width: 85px;
+
+        max-width: 45%;
+    }
+
+
+    /* İBO CHEF */
+
+    .logo {
+        font-size: 32px;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* KATEGORİLER */
+
+    .categories {
+        gap: 6px;
+
+        padding-bottom: 12px;
+    }
+
+
+    .category-btn {
+        padding: 9px 13px;
+
+        font-size: 13px;
+    }
+
+
+    /* ÜRÜNLER */
+
+    .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+
+    /* ÜRÜN FOTOĞRAFLARI */
+
+    .product-image,
+    .no-image {
+        height: 145px;
+    }
+
+
+    /* ÜRÜN ADI */
+
+    .product-name {
+        font-size: 15px;
+    }
+
+
+    /* FİYAT */
+
+    .product-price {
+        font-size: 14px;
+    }
+
+
+    /* MODAL */
+
+    .modal {
+        padding: 10px;
+    }
+
+
+    .modal-body h2 {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =====================================================
+   ÇOK KÜÇÜK TELEFON
+   ===================================================== */
+
+@media (max-width: 360px) {
+
+    .logo-image {
+        width: 75px;
+    }
+
+
+    .logo {
+        font-size: 28px;
+    }
+
+
+    .product-image,
+    .no-image {
+        height: 125px;
+    }
+
 }
