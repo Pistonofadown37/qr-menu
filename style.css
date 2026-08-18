@@ -48,7 +48,7 @@ body::after {
     height: 100vh;
     background-image: url("images/arka-plan.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 500px auto;
     background-position: center;
     opacity: 0.18;
     z-index: -1;
