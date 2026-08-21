@@ -55,17 +55,6 @@ const menuData = {
     },
 
     {
-      id: 5,
-      category_id: "ara-sicak",
-      name: "Musakka",
-      description: "Özel sos ve kıymalı harç ile hazırlanan geleneksel musakka.",
-      ingredients: "Patlıcan, dana kıyma, domates, soğan, biber, baharat",
-      price: 350,
-      calories: 650,
-      image: "images/musakka.jpg"
-    },
-
-    {
       id: 6,
       category_id: "ana-yemek",
       name: "Dana Ciğer",
