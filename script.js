@@ -196,6 +196,7 @@ calorieStyle.textContent = `
 }
 
 @media(max-width:520px) {
+
     .calorie-overlay {
         padding: 10px;
     }
@@ -277,6 +278,7 @@ function renderProducts() {
 
     productsEl.innerHTML = "";
 
+
     /* SAYFA İLK AÇILDIĞINDA ÜRÜN GÖSTERME */
 
     if (!activeCategory) {
@@ -296,6 +298,22 @@ function renderProducts() {
     const products = menuData.products.filter(
         product => product.category_id === activeCategory
     );
+
+
+    /* SEÇİLEN KATEGORİDE ÜRÜN YOKSA */
+
+    if (products.length === 0) {
+
+        productsEl.innerHTML = `
+            <div class="category-message">
+                <div class="category-message-icon">🍽️</div>
+                <h2>Ürün Bulunamadı</h2>
+                <p>Bu kategoride henüz ürün bulunmuyor.</p>
+            </div>
+        `;
+
+        return;
+    }
 
 
     products.forEach(product => {
@@ -367,10 +385,9 @@ function renderProducts() {
 
 function openProduct(product) {
 
-    const category =
-        menuData.categories.find(
-            c => c.id === product.category_id
-        );
+    const category = menuData.categories.find(
+        c => c.id === product.category_id
+    );
 
 
     modalCategory.textContent =
@@ -407,76 +424,66 @@ function openProduct(product) {
     }
 
 
+    /* =================================================
+       ALERJEN VE KALORİ BİLGİSİ
+       ================================================= */
+
     let modalInfo =
         document.getElementById("modalCalorieInfo");
 
 
     if (!modalInfo) {
 
-        modalInfo = document.createElement("div");
+        modalInfo =
+            document.createElement("div");
 
-        modalInfo.id = "modalCalorieInfo";
+        modalInfo.id =
+            "modalCalorieInfo";
 
-        modalInfo.style.marginTop = "8px";
-        modalInfo.style.fontSize = "14px";
-        modalInfo.style.color = "#333";
+        modalInfo.style.marginTop =
+            "12px";
 
-        modalIngredients.parentNode.appendChild(modalInfo);
+        modalInfo.style.fontSize =
+            "14px";
+
+        /*
+         Modalın tasarımına göre gerekirse
+         CSS'ten renk alması için bu renk değiştirilebilir.
+        */
+
+        modalInfo.style.lineHeight =
+            "1.8";
+
+        modalIngredients.parentNode.appendChild(
+            modalInfo
+        );
     }
 
 
-    modalInfo.innerHTML =
-        `<strong>Alerjenler:</strong> ${getAllergens(product)}
+    /*
+       Ürünün kendi allergens bilgisini kullan.
+       data.js içerisinde allergens yoksa
+       varsayılan metni göster.
+    */
+
+    modalInfo.innerHTML = `
+        <strong>Alerjenler:</strong>
+        ${product.allergens || "Bilgi için işletmeye danışınız"}
         <br>
-        <strong>Kalori:</strong> ${product.calories || 0} kcal`;
+        <strong>Kalori:</strong>
+        ${product.calories || 0} kcal
+    `;
 
 
     modal.classList.add("show");
 
-    modal.setAttribute("aria-hidden", "false");
+    modal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
 
-    document.body.style.overflow = "hidden";
-}
-
-
-/* =====================================================
-   ALERJEN
-   ===================================================== */
-
-function getAllergens(product) {
-
-    const text =
-        `${product.name} ${product.ingredients || ""}`
-        .toLowerCase();
-
-
-    if (
-        text.includes("levrek") ||
-        text.includes("balık") ||
-        text.includes("kalamar") ||
-        text.includes("karides") ||
-        text.includes("somon") ||
-        text.includes("hamsi") ||
-        text.includes("çipura") ||
-        text.includes("istavrit") ||
-        text.includes("sardalya") ||
-        text.includes("barbun")
-    ) {
-        return "Balık / Deniz ürünleri";
-    }
-
-
-    if (
-        text.includes("yoğurt") ||
-        text.includes("peynir") ||
-        text.includes("tereyağı") ||
-        text.includes("cheddar")
-    ) {
-        return "Süt ürünü";
-    }
-
-
-    return "Bilgi için işletmeye danışınız";
+    document.body.style.overflow =
+        "hidden";
 }
 
 
@@ -488,38 +495,53 @@ function closeProduct() {
 
     modal.classList.remove("show");
 
-    modal.setAttribute("aria-hidden", "true");
+    modal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
 
-    document.body.style.overflow = "";
+    document.body.style.overflow =
+        "";
 }
 
 
-document.getElementById("closeModal").onclick = closeProduct;
+document.getElementById(
+    "closeModal"
+).onclick = closeProduct;
 
 
-modal.addEventListener("click", event => {
+modal.addEventListener(
+    "click",
+    event => {
 
-    if (event.target === modal) {
-        closeProduct();
+        if (event.target === modal) {
+
+            closeProduct();
+
+        }
+
     }
-
-});
+);
 
 
 /* =====================================================
    ESC
    ===================================================== */
 
-document.addEventListener("keydown", event => {
+document.addEventListener(
+    "keydown",
+    event => {
 
-    if (event.key === "Escape") {
+        if (event.key === "Escape") {
 
-        closeProduct();
+            closeProduct();
 
-        closeCalorieCalculator();
+            closeCalorieCalculator();
+
+        }
+
     }
-
-});
+);
 
 
 /* =====================================================
@@ -528,20 +550,28 @@ document.addEventListener("keydown", event => {
 
 function createCalorieCalculator() {
 
-    const overlay = document.createElement("div");
+    const overlay =
+        document.createElement("div");
 
-    overlay.id = "calorieOverlay";
+    overlay.id =
+        "calorieOverlay";
 
-    overlay.className = "calorie-overlay";
+    overlay.className =
+        "calorie-overlay";
 
 
-    const box = document.createElement("div");
+    const box =
+        document.createElement("div");
 
-    box.className = "calorie-box";
+    box.className =
+        "calorie-box";
 
 
     box.innerHTML = `
-        <button class="calorie-close" id="calorieClose">×</button>
+        <button
+            class="calorie-close"
+            id="calorieClose"
+        >×</button>
 
         <div class="calorie-title">
             Kalori Hesaplayıcı
@@ -551,7 +581,10 @@ function createCalorieCalculator() {
             Tüketmek istediğiniz ürünleri seçin
         </div>
 
-        <div class="calorie-list" id="calorieList"></div>
+        <div
+            class="calorie-list"
+            id="calorieList"
+        ></div>
 
         <div class="calorie-total">
 
@@ -582,21 +615,30 @@ function createCalorieCalculator() {
     document.body.appendChild(overlay);
 
 
-    document.getElementById("calorieClose").onclick =
+    document.getElementById(
+        "calorieClose"
+    ).onclick =
         closeCalorieCalculator;
 
 
-    document.getElementById("calorieClear").onclick =
+    document.getElementById(
+        "calorieClear"
+    ).onclick =
         clearCalories;
 
 
-    overlay.addEventListener("click", event => {
+    overlay.addEventListener(
+        "click",
+        event => {
 
-        if (event.target === overlay) {
-            closeCalorieCalculator();
+            if (event.target === overlay) {
+
+                closeCalorieCalculator();
+
+            }
+
         }
-
-    });
+    );
 
 
     renderCalorieProducts();
@@ -627,26 +669,35 @@ function renderCalorieProducts() {
             );
 
 
-        const label = document.createElement("label");
+        const label =
+            document.createElement("label");
 
-        label.className = "calorie-item";
-
-
-        const left = document.createElement("div");
-
-        left.className = "calorie-item-left";
+        label.className =
+            "calorie-item";
 
 
-        const checkbox = document.createElement("input");
+        const left =
+            document.createElement("div");
 
-        checkbox.type = "checkbox";
-
-        checkbox.dataset.id = product.id;
-
-        checkbox.onchange = updateCalorieTotal;
+        left.className =
+            "calorie-item-left";
 
 
-        const nameBox = document.createElement("div");
+        const checkbox =
+            document.createElement("input");
+
+        checkbox.type =
+            "checkbox";
+
+        checkbox.dataset.id =
+            product.id;
+
+        checkbox.onchange =
+            updateCalorieTotal;
+
+
+        const nameBox =
+            document.createElement("div");
 
         nameBox.innerHTML = `
             <span class="calorie-product-name">
@@ -660,18 +711,22 @@ function renderCalorieProducts() {
 
 
         left.appendChild(checkbox);
+
         left.appendChild(nameBox);
 
 
-        const value = document.createElement("div");
+        const value =
+            document.createElement("div");
 
-        value.className = "calorie-value";
+        value.className =
+            "calorie-value";
 
         value.textContent =
             `${product.calories || 0} kcal`;
 
 
         label.appendChild(left);
+
         label.appendChild(value);
 
         list.appendChild(label);
@@ -703,13 +758,17 @@ function updateCalorieTotal() {
 
             if (product) {
 
-                total += Number(product.calories) || 0;
+                total +=
+                    Number(product.calories) || 0;
+
             }
 
         });
 
 
-    document.getElementById("calorieTotal").textContent =
+    document.getElementById(
+        "calorieTotal"
+    ).textContent =
         `${total.toLocaleString("tr-TR")} kcal`;
 }
 
@@ -721,7 +780,9 @@ function updateCalorieTotal() {
 function openCalorieCalculator() {
 
     let overlay =
-        document.getElementById("calorieOverlay");
+        document.getElementById(
+            "calorieOverlay"
+        );
 
 
     if (!overlay) {
@@ -729,13 +790,17 @@ function openCalorieCalculator() {
         createCalorieCalculator();
 
         overlay =
-            document.getElementById("calorieOverlay");
+            document.getElementById(
+                "calorieOverlay"
+            );
+
     }
 
 
     overlay.classList.add("show");
 
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow =
+        "hidden";
 }
 
 
@@ -746,7 +811,9 @@ function openCalorieCalculator() {
 function closeCalorieCalculator() {
 
     const overlay =
-        document.getElementById("calorieOverlay");
+        document.getElementById(
+            "calorieOverlay"
+        );
 
 
     if (!overlay) return;
@@ -754,7 +821,8 @@ function closeCalorieCalculator() {
 
     overlay.classList.remove("show");
 
-    document.body.style.overflow = "";
+    document.body.style.overflow =
+        "";
 }
 
 
