@@ -230,7 +230,7 @@ const menuData = {
       description: "Izgarada pişirilmiş taze levrek.",
       ingredients: "Levrek, zeytinyağı, limon, tuz",
       allergens: "Balık",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 550,
       image: "images/levrek.jpg"
     },
@@ -241,7 +241,7 @@ const menuData = {
       description: "Izgarada pişirilmiş taze çipura.",
       ingredients: "Çipura, zeytinyağı, limon, tuz",
       allergens: "Balık",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 520,
       image: "images/cipura.jpg"
     },
@@ -252,7 +252,7 @@ const menuData = {
       description: "Izgara somon fileto.",
       ingredients: "Somon, zeytinyağı, limon, baharat",
       allergens: "Balık",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 680,
       image: "images/somon.jpg"
     },
@@ -263,7 +263,7 @@ const menuData = {
       description: "Taze kaya levreği ızgarada pişirilir.",
       ingredients: "Kaya levreği, zeytinyağı, limon, baharat",
       allergens: "Balık",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 560,
       image: "images/kaya-levregi.jpg"
     },
@@ -274,7 +274,7 @@ const menuData = {
       description: "Çıtır şekilde hazırlanmış taze hamsi.",
       ingredients: "Hamsi, mısır unu, yağ, limon",
       allergens: "Balık, gluten",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 650,
       image: "images/hamsi.jpg"
     },
@@ -285,7 +285,7 @@ const menuData = {
       description: "Taze istavrit tava.",
       ingredients: "İstavrit, un, yağ, limon",
       allergens: "Balık, gluten",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 600,
       image: "images/istavrit.jpg"
     },
@@ -296,7 +296,7 @@ const menuData = {
       description: "Taze çinekop tava.",
       ingredients: "Çinekop, un, yağ, limon",
       allergens: "Balık, gluten",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 650,
       image: "images/cinekop.jpg"
     },
@@ -307,7 +307,7 @@ const menuData = {
       description: "Çıtır şekilde kızartılmış taze barbun.",
       ingredients: "Barbun, un, yağ, limon",
       allergens: "Balık, gluten",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 620,
       image: "images/barbun.jpg"
     },
@@ -318,7 +318,7 @@ const menuData = {
       description: "Sebzelerle birlikte fırında hazırlanmış levrek.",
       ingredients: "Levrek, domates, biber, soğan, limon",
       allergens: "Balık",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 600,
       image: "images/levrek-bugulama.jpg"
     },
@@ -329,7 +329,7 @@ const menuData = {
       description: "Sebzeler eşliğinde hazırlanmış çipura.",
       ingredients: "Çipura, domates, biber, soğan, limon",
       allergens: "Balık",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 580,
       image: "images/cipura-bugulama.jpg"
     },
@@ -340,7 +340,7 @@ const menuData = {
       description: "Sebzelerle birlikte fırında hazırlanmış hamsi.",
       ingredients: "Hamsi, soğan, limon, domates, baharat",
       allergens: "Balık",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 550,
       image: "images/hamsi-bugulama.jpg"
     },
@@ -351,7 +351,7 @@ const menuData = {
       description: "Tuz kabuğu içerisinde fırında pişirilmiş günlük balık.",
       ingredients: "Mevsim balığı, kaya tuzu, limon",
       allergens: "Balık",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 650,
       image: "images/tuzda-balik.jpg"
     },
@@ -509,7 +509,7 @@ const menuData = {
       description: "Sebzeler ve özel soslarla hazırlanmış sıcak ahtapot güveç.",
       ingredients: "Ahtapot, domates, biber, soğan, sarımsak, tereyağı",
       allergens: "Yumuşakça, süt ürünü",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 500,
       image: "images/ahtapot-guvec.jpg"
     },
@@ -607,7 +607,7 @@ const menuData = {
       description: "Cevizli ve şerbetli geleneksel baklava.",
       ingredients: "Yufka, tereyağı, ceviz, şeker, şerbet",
       allergens: "Gluten, süt ürünü, sert kabuklu yemiş",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 650,
       image: "images/baklava.jpg"
     },
@@ -895,7 +895,7 @@ const menuData = {
       description: "Izgarada pişirilmiş taze levrek.",
       ingredients: "Levrek, zeytinyağı, limon, tuz",
       allergens: "Balık",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 550,
       image: "images/levrek.jpg"
     },
@@ -907,7 +907,7 @@ const menuData = {
       description: "Izgarada pişirilmiş taze çipura.",
       ingredients: "Çipura, zeytinyağı, limon, tuz",
       allergens: "Balık",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 520,
       image: "images/cipura.jpg"
     },
@@ -919,7 +919,7 @@ const menuData = {
       description: "Izgara somon fileto.",
       ingredients: "Somon, zeytinyağı, limon, baharat",
       allergens: "Balık",
-      price: ("Fiyat Sorunuz") ,
+      price: 666 ,
       calories: 680,
       image: "images/somon.jpg"
     },
@@ -931,7 +931,7 @@ const menuData = {
       description: "Taze kaya levreği ızgarada pişirilir.",
       ingredients: "Kaya levreği, zeytinyağı, limon, baharat",
       allergens: "Balık",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 560,
       image: "images/kaya-levregi.jpg"
     },
@@ -943,7 +943,7 @@ const menuData = {
       description: "Çıtır şekilde hazırlanmış taze hamsi.",
       ingredients: "Hamsi, mısır unu, yağ, limon",
       allergens: "Balık, gluten",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 650,
       image: "images/hamsi.jpg"
     },
@@ -955,7 +955,7 @@ const menuData = {
       description: "Taze istavrit tava.",
       ingredients: "İstavrit, un, yağ, limon",
       allergens: "Balık, gluten",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 600,
       image: "images/istavrit.jpg"
     },
@@ -967,7 +967,7 @@ const menuData = {
       description: "Taze çinekop tava.",
       ingredients: "Çinekop, un, yağ, limon",
       allergens: "Balık, gluten",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 650,
       image: "images/cinekop.jpg"
     },
@@ -979,7 +979,7 @@ const menuData = {
       description: "Çıtır şekilde kızartılmış taze barbun.",
       ingredients: "Barbun, un, yağ, limon",
       allergens: "Balık, gluten",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 620,
       image: "images/barbun.jpg"
     },
@@ -991,7 +991,7 @@ const menuData = {
       description: "Sebzelerle birlikte fırında hazırlanmış levrek.",
       ingredients: "Levrek, domates, biber, soğan, limon",
       allergens: "Balık",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 600,
       image: "images/levrek-bugulama.jpg"
     },
@@ -1003,7 +1003,7 @@ const menuData = {
       description: "Sebzeler eşliğinde hazırlanmış çipura.",
       ingredients: "Çipura, domates, biber, soğan, limon",
       allergens: "Balık",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 580,
       image: "images/cipura-bugulama.jpg"
     },
@@ -1015,7 +1015,7 @@ const menuData = {
       description: "Sebzelerle birlikte fırında hazırlanmış hamsi.",
       ingredients: "Hamsi, soğan, limon, domates, baharat",
       allergens: "Balık",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 550,
       image: "images/hamsi-bugulama.jpg"
     },
@@ -1027,7 +1027,7 @@ const menuData = {
       description: "Tuz kabuğu içerisinde fırında pişirilmiş günlük balık.",
       ingredients: "Mevsim balığı, kaya tuzu, limon",
       allergens: "Balık",
-      price: ("Fiyat Sorunuz"),
+      price: 666,
       calories: 650,
       image: "images/tuzda-balik.jpg"
     },
@@ -1198,7 +1198,7 @@ const menuData = {
       description: "Sebzeler ve özel soslarla hazırlanmış sıcak ahtapot güveç.",
       ingredients: "Ahtapot, domates, biber, soğan, sarımsak, tereyağı",
       allergens: "Yumuşakça, süt ürünü",
-      price: (("Fiyat Sorunuz")),
+      price: (666),
       calories: 500,
       image: "images/ahtapot-guvec.jpg"
     },
@@ -1304,7 +1304,7 @@ const menuData = {
       description: "Cevizli ve şerbetli geleneksel baklava.",
       ingredients: "Yufka, tereyağı, ceviz, şeker, şerbet",
       allergens: "Gluten, süt ürünü, sert kabuklu yemiş",
-      price: (("Fiyat Sorunuz")),
+      price: (666),
       calories: 650,
       image: "images/baklava.jpg"
     },
