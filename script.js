@@ -13,6 +13,71 @@ const modalIngredients = document.getElementById("modalIngredients");
 
 
 /* =====================================================
+   FİYAT FORMATLAMA
+   ===================================================== */
+
+function formatPrice(price) {
+
+    /* Sayısal fiyat */
+    if (typeof price === "number") {
+        return `${price} TL`;
+    }
+
+    /* Metin fiyat */
+    if (typeof price === "string") {
+
+        /*
+         * Fiyat zaten TL içeriyorsa
+         * tekrar TL ekleme.
+         */
+        if (price.toUpperCase().includes("TL")) {
+            return price;
+        }
+
+        /*
+         * Fiyat Sorunuz gibi özel metinler
+         */
+        if (
+            price.toLowerCase().includes("fiyat sorunuz")
+        ) {
+            return price;
+        }
+
+        return price;
+    }
+
+    /* Çoklu fiyat objesi */
+    if (
+        typeof price === "object" &&
+        price !== null &&
+        !Array.isArray(price)
+    ) {
+
+        return Object.entries(price)
+            .map(([type, amount]) => {
+
+                /*
+                 * amount zaten string olarak TL içeriyorsa
+                 * tekrar TL ekleme.
+                 */
+                if (
+                    typeof amount === "string" &&
+                    amount.toUpperCase().includes("TL")
+                ) {
+                    return `${type}: ${amount}`;
+                }
+
+                return `${type}: ${amount} TL`;
+
+            })
+            .join(" | ");
+    }
+
+    return "";
+}
+
+
+/* =====================================================
    KALORİ HESAPLAYICI CSS
    ===================================================== */
 
@@ -48,7 +113,7 @@ calorieStyle.textContent = `
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,.88);
-    z-index: 100;
+    z-index: 1000;
     align-items: center;
     justify-content: center;
     padding: 18px;
@@ -231,17 +296,41 @@ function renderCategories() {
 
     categoriesEl.innerHTML = "";
 
+    if (
+        typeof menuData === "undefined" ||
+        !menuData.categories ||
+        !Array.isArray(menuData.categories)
+    ) {
+
+        console.error(
+            "menuData veya categories bulunamadı."
+        );
+
+        return;
+    }
+
     menuData.categories.forEach(category => {
 
-        const btn = document.createElement("button");
+        const btn =
+            document.createElement("button");
 
-        btn.className = "category-btn";
+        btn.type = "button";
 
-        btn.textContent = category.name;
+        btn.className =
+            "category-btn";
 
-        btn.dataset.category = category.id;
+        btn.textContent =
+            category.name;
 
-        btn.onclick = () => selectCategory(category.id);
+        btn.dataset.category =
+            category.id;
+
+        btn.addEventListener(
+            "click",
+            () => {
+                selectCategory(category.id);
+            }
+        );
 
         categoriesEl.appendChild(btn);
 
@@ -255,16 +344,20 @@ function renderCategories() {
 
 function selectCategory(categoryId) {
 
-    activeCategory = categoryId;
+    activeCategory =
+        categoryId;
 
-    document.querySelectorAll(".category-btn").forEach(btn => {
+    document
+        .querySelectorAll(".category-btn")
+        .forEach(btn => {
 
-        btn.classList.toggle(
-            "active",
-            btn.dataset.category === categoryId
-        );
+            btn.classList.toggle(
+                "active",
+                btn.dataset.category ===
+                String(categoryId)
+            );
 
-    });
+        });
 
     renderProducts();
 }
@@ -278,16 +371,29 @@ function renderProducts() {
 
     productsEl.innerHTML = "";
 
-
-    /* SAYFA İLK AÇILDIĞINDA ÜRÜN GÖSTERME */
+    /*
+     * Sayfa ilk açıldığında
+     * ürünleri gösterme.
+     */
 
     if (!activeCategory) {
 
         productsEl.innerHTML = `
             <div class="category-message">
-                <div class="category-message-icon">🍽️</div>
-                <h2>Menüyü Keşfedin</h2>
-                <p>Ürünleri görüntülemek için yukarıdan bir kategori seçin.</p>
+
+                <div class="category-message-icon">
+                    🍽️
+                </div>
+
+                <h2>
+                    Menüyü Keşfedin
+                </h2>
+
+                <p>
+                    Ürünleri görüntülemek için
+                    yukarıdan bir kategori seçin.
+                </p>
+
             </div>
         `;
 
@@ -295,20 +401,35 @@ function renderProducts() {
     }
 
 
-    const products = menuData.products.filter(
-        product => product.category_id === activeCategory
-    );
+    const products =
+        menuData.products.filter(
+            product =>
+                product.category_id ===
+                activeCategory
+        );
 
 
-    /* SEÇİLEN KATEGORİDE ÜRÜN YOKSA */
+    /*
+     * Kategoride ürün yoksa
+     */
 
     if (products.length === 0) {
 
         productsEl.innerHTML = `
             <div class="category-message">
-                <div class="category-message-icon">🍽️</div>
-                <h2>Ürün Bulunamadı</h2>
-                <p>Bu kategoride henüz ürün bulunmuyor.</p>
+
+                <div class="category-message-icon">
+                    🍽️
+                </div>
+
+                <h2>
+                    Ürün Bulunamadı
+                </h2>
+
+                <p>
+                    Bu kategoride henüz ürün bulunmuyor.
+                </p>
+
             </div>
         `;
 
@@ -318,57 +439,116 @@ function renderProducts() {
 
     products.forEach(product => {
 
-        const card = document.createElement("article");
+        const card =
+            document.createElement("article");
 
-        card.className = "product";
+        card.className =
+            "product";
 
-        card.onclick = () => openProduct(product);
 
+        card.addEventListener(
+            "click",
+            () => {
+                openProduct(product);
+            }
+        );
+
+
+        /* ================================
+           ÜRÜN GÖRSELİ
+        ================================= */
 
         if (product.image) {
 
-            const img = document.createElement("img");
+            const img =
+                document.createElement("img");
 
-            img.className = "product-image";
+            img.className =
+                "product-image";
 
-            img.src = product.image;
+            img.src =
+                product.image;
 
-            img.alt = product.name;
+            img.alt =
+                product.name;
+
+
+            img.onerror = () => {
+
+                img.style.display =
+                    "none";
+
+                if (
+                    !card.querySelector(".no-image")
+                ) {
+
+                    const noImage =
+                        document.createElement("div");
+
+                    noImage.className =
+                        "no-image";
+
+                    noImage.textContent =
+                        "🍽️";
+
+                    card.insertBefore(
+                        noImage,
+                        info
+                    );
+                }
+            };
+
 
             card.appendChild(img);
 
         } else {
 
-            const noImage = document.createElement("div");
+            const noImage =
+                document.createElement("div");
 
-            noImage.className = "no-image";
+            noImage.className =
+                "no-image";
 
-            noImage.textContent = "🍽️";
+            noImage.textContent =
+                "🍽️";
 
             card.appendChild(noImage);
         }
 
 
-        const info = document.createElement("div");
+        /* ================================
+           ÜRÜN BİLGİLERİ
+        ================================= */
 
-        info.className = "product-info";
+        const info =
+            document.createElement("div");
+
+        info.className =
+            "product-info";
 
 
-        const name = document.createElement("div");
+        const name =
+            document.createElement("div");
 
-        name.className = "product-name";
+        name.className =
+            "product-name";
 
-        name.textContent = product.name;
+        name.textContent =
+            product.name;
 
 
-        const price = document.createElement("div");
+        const price =
+            document.createElement("div");
 
-        price.className = "product-price";
+        price.className =
+            "product-price";
 
-        price.textContent = `${product.price} TL`;
+        price.textContent =
+            formatPrice(product.price);
 
 
         info.appendChild(name);
+
         info.appendChild(price);
 
         card.appendChild(info);
@@ -385,25 +565,34 @@ function renderProducts() {
 
 function openProduct(product) {
 
-    const category = menuData.categories.find(
-        c => c.id === product.category_id
-    );
+    const category =
+        menuData.categories.find(
+            c =>
+                c.id ===
+                product.category_id
+        );
 
 
     modalCategory.textContent =
-        category ? category.name : "";
+        category
+            ? category.name
+            : "";
 
 
     modalName.textContent =
-        product.name;
+        product.name ||
+        "";
 
 
     modalPrice.textContent =
-        `${product.price} TL`;
+        formatPrice(
+            product.price
+        );
 
 
     modalDescription.textContent =
-        product.description || "";
+        product.description ||
+        "";
 
 
     modalIngredients.textContent =
@@ -412,24 +601,47 @@ function openProduct(product) {
             : "";
 
 
+    /* ================================
+       MODAL GÖRSELİ
+    ================================= */
+
     if (product.image) {
 
-        modalImage.src = product.image;
-        modalImage.alt = product.name;
-        modalImage.style.display = "block";
+        modalImage.src =
+            product.image;
+
+        modalImage.alt =
+            product.name;
+
+        modalImage.style.display =
+            "block";
+
+        modalImage.onerror =
+            () => {
+
+                modalImage.style.display =
+                    "none";
+            };
 
     } else {
 
-        modalImage.style.display = "none";
+        modalImage.style.display =
+            "none";
+
+        modalImage.removeAttribute(
+            "src"
+        );
     }
 
 
-    /* =================================================
-       ALERJEN VE KALORİ BİLGİSİ
-       ================================================= */
+    /* ================================
+       ALERJEN + KALORİ
+    ================================= */
 
     let modalInfo =
-        document.getElementById("modalCalorieInfo");
+        document.getElementById(
+            "modalCalorieInfo"
+        );
 
 
     if (!modalInfo) {
@@ -440,19 +652,18 @@ function openProduct(product) {
         modalInfo.id =
             "modalCalorieInfo";
 
+
         modalInfo.style.marginTop =
             "12px";
+
 
         modalInfo.style.fontSize =
             "14px";
 
-        /*
-         Modalın tasarımına göre gerekirse
-         CSS'ten renk alması için bu renk değiştirilebilir.
-        */
 
         modalInfo.style.lineHeight =
             "1.8";
+
 
         modalIngredients.parentNode.appendChild(
             modalInfo
@@ -460,27 +671,44 @@ function openProduct(product) {
     }
 
 
-    /*
-       Ürünün kendi allergens bilgisini kullan.
-       data.js içerisinde allergens yoksa
-       varsayılan metni göster.
-    */
+    const allergens =
+        product.allergens ||
+        "Bilgi için işletmeye danışınız";
+
+
+    const calories =
+        product.calories !== undefined &&
+        product.calories !== null &&
+        product.calories !== ""
+            ? product.calories
+            : 0;
+
 
     modalInfo.innerHTML = `
         <strong>Alerjenler:</strong>
-        ${product.allergens || "Bilgi için işletmeye danışınız"}
+        ${allergens}
+
         <br>
+
         <strong>Kalori:</strong>
-        ${product.calories || 0} kcal
+        ${calories} kcal
     `;
 
 
-    modal.classList.add("show");
+    /* ================================
+       MODALI AÇ
+    ================================= */
+
+    modal.classList.add(
+        "show"
+    );
+
 
     modal.setAttribute(
         "aria-hidden",
         "false"
     );
+
 
     document.body.style.overflow =
         "hidden";
@@ -493,28 +721,52 @@ function openProduct(product) {
 
 function closeProduct() {
 
-    modal.classList.remove("show");
+    modal.classList.remove(
+        "show"
+    );
+
 
     modal.setAttribute(
         "aria-hidden",
         "true"
     );
 
-    document.body.style.overflow =
-        "";
+
+    restoreBodyScroll();
 }
 
 
-document.getElementById(
-    "closeModal"
-).onclick = closeProduct;
+/* =====================================================
+   MODAL KAPATMA BUTONU
+   ===================================================== */
 
+const closeModalButton =
+    document.getElementById(
+        "closeModal"
+    );
+
+
+if (closeModalButton) {
+
+    closeModalButton.addEventListener(
+        "click",
+        closeProduct
+    );
+}
+
+
+/* =====================================================
+   MODAL ARKA PLANA TIKLAMA
+   ===================================================== */
 
 modal.addEventListener(
     "click",
     event => {
 
-        if (event.target === modal) {
+        if (
+            event.target ===
+            modal
+        ) {
 
             closeProduct();
 
@@ -525,18 +777,80 @@ modal.addEventListener(
 
 
 /* =====================================================
-   ESC
+   BODY SCROLL
+   ===================================================== */
+
+function restoreBodyScroll() {
+
+    const productModalOpen =
+        modal.classList.contains(
+            "show"
+        );
+
+
+    const calorieOverlay =
+        document.getElementById(
+            "calorieOverlay"
+        );
+
+
+    const calorieModalOpen =
+        calorieOverlay &&
+        calorieOverlay.classList.contains(
+            "show"
+        );
+
+
+    if (
+        !productModalOpen &&
+        !calorieModalOpen
+    ) {
+
+        document.body.style.overflow =
+            "";
+    }
+}
+
+
+/* =====================================================
+   ESC TUŞU
    ===================================================== */
 
 document.addEventListener(
     "keydown",
     event => {
 
-        if (event.key === "Escape") {
+        if (
+            event.key === "Escape"
+        ) {
 
-            closeProduct();
+            if (
+                modal.classList.contains(
+                    "show"
+                )
+            ) {
 
-            closeCalorieCalculator();
+                closeProduct();
+
+            }
+
+
+            const calorieOverlay =
+                document.getElementById(
+                    "calorieOverlay"
+                );
+
+
+            if (
+                calorieOverlay &&
+                calorieOverlay.classList.contains(
+                    "show"
+                )
+            ) {
+
+                closeCalorieCalculator();
+
+            }
 
         }
 
@@ -571,26 +885,35 @@ function createCalorieCalculator() {
         <button
             class="calorie-close"
             id="calorieClose"
-        >×</button>
+            type="button"
+            aria-label="Kapat"
+        >
+            ×
+        </button>
+
 
         <div class="calorie-title">
             Kalori Hesaplayıcı
         </div>
 
+
         <div class="calorie-subtitle">
             Tüketmek istediğiniz ürünleri seçin
         </div>
+
 
         <div
             class="calorie-list"
             id="calorieList"
         ></div>
 
+
         <div class="calorie-total">
 
             <div class="calorie-total-label">
                 Toplam Kalori
             </div>
+
 
             <div
                 class="calorie-total-number"
@@ -601,37 +924,55 @@ function createCalorieCalculator() {
 
         </div>
 
+
         <button
             class="calorie-clear"
             id="calorieClear"
+            type="button"
         >
             Seçimleri Temizle
         </button>
     `;
 
 
-    overlay.appendChild(box);
-
-    document.body.appendChild(overlay);
-
-
-    document.getElementById(
-        "calorieClose"
-    ).onclick =
-        closeCalorieCalculator;
+    overlay.appendChild(
+        box
+    );
 
 
-    document.getElementById(
-        "calorieClear"
-    ).onclick =
-        clearCalories;
+    document.body.appendChild(
+        overlay
+    );
+
+
+    document
+        .getElementById(
+            "calorieClose"
+        )
+        .addEventListener(
+            "click",
+            closeCalorieCalculator
+        );
+
+
+    document
+        .getElementById(
+            "calorieClear"
+        )
+        .addEventListener(
+            "click",
+            clearCalories
+        );
 
 
     overlay.addEventListener(
         "click",
         event => {
 
-            if (event.target === overlay) {
+            if (
+                event.target ===
+                overlay
+            ) {
 
                 closeCalorieCalculator();
 
@@ -652,86 +993,157 @@ function createCalorieCalculator() {
 function renderCalorieProducts() {
 
     const list =
-        document.getElementById("calorieList");
+        document.getElementById(
+            "calorieList"
+        );
 
 
-    if (!list) return;
+    if (!list) {
+        return;
+    }
 
 
-    list.innerHTML = "";
+    list.innerHTML =
+        "";
 
 
-    menuData.products.forEach(product => {
+    menuData.products.forEach(
+        product => {
 
-        const category =
-            menuData.categories.find(
-                c => c.id === product.category_id
+            const category =
+                menuData.categories.find(
+                    c =>
+                        c.id ===
+                        product.category_id
+                );
+
+
+            const label =
+                document.createElement(
+                    "label"
+                );
+
+
+            label.className =
+                "calorie-item";
+
+
+            const left =
+                document.createElement(
+                    "div"
+                );
+
+
+            left.className =
+                "calorie-item-left";
+
+
+            const checkbox =
+                document.createElement(
+                    "input"
+                );
+
+
+            checkbox.type =
+                "checkbox";
+
+
+            checkbox.dataset.id =
+                product.id;
+
+
+            checkbox.addEventListener(
+                "change",
+                updateCalorieTotal
             );
 
 
-        const label =
-            document.createElement("label");
-
-        label.className =
-            "calorie-item";
-
-
-        const left =
-            document.createElement("div");
-
-        left.className =
-            "calorie-item-left";
+            const nameBox =
+                document.createElement(
+                    "div"
+                );
 
 
-        const checkbox =
-            document.createElement("input");
-
-        checkbox.type =
-            "checkbox";
-
-        checkbox.dataset.id =
-            product.id;
-
-        checkbox.onchange =
-            updateCalorieTotal;
+            const productName =
+                document.createElement(
+                    "span"
+                );
 
 
-        const nameBox =
-            document.createElement("div");
-
-        nameBox.innerHTML = `
-            <span class="calorie-product-name">
-                ${product.name}
-            </span>
-
-            <span class="calorie-product-category">
-                ${category ? category.name : ""}
-            </span>
-        `;
+            productName.className =
+                "calorie-product-name";
 
 
-        left.appendChild(checkbox);
-
-        left.appendChild(nameBox);
-
-
-        const value =
-            document.createElement("div");
-
-        value.className =
-            "calorie-value";
-
-        value.textContent =
-            `${product.calories || 0} kcal`;
+            productName.textContent =
+                product.name;
 
 
-        label.appendChild(left);
+            const productCategory =
+                document.createElement(
+                    "span"
+                );
 
-        label.appendChild(value);
 
-        list.appendChild(label);
+            productCategory.className =
+                "calorie-product-category";
 
-    });
+
+            productCategory.textContent =
+                category
+                    ? category.name
+                    : "";
+
+
+            nameBox.appendChild(
+                productName
+            );
+
+
+            nameBox.appendChild(
+                productCategory
+            );
+
+
+            left.appendChild(
+                checkbox
+            );
+
+
+            left.appendChild(
+                nameBox
+            );
+
+
+            const value =
+                document.createElement(
+                    "div"
+                );
+
+
+            value.className =
+                "calorie-value";
+
+
+            value.textContent =
+                `${Number(product.calories) || 0} kcal`;
+
+
+            label.appendChild(
+                left
+            );
+
+
+            label.appendChild(
+                value
+            );
+
+
+            list.appendChild(
+                label
+            );
+
+        }
+    );
 }
 
 
@@ -741,35 +1153,48 @@ function renderCalorieProducts() {
 
 function updateCalorieTotal() {
 
-    let total = 0;
+    let total =
+        0;
 
 
     document
         .querySelectorAll(
             "#calorieList input[type='checkbox']:checked"
         )
-        .forEach(checkbox => {
+        .forEach(
+            checkbox => {
 
-            const product =
-                menuData.products.find(
-                    p => p.id == checkbox.dataset.id
-                );
+                const product =
+                    menuData.products.find(
+                        p =>
+                            String(p.id) ===
+                            checkbox.dataset.id
+                    );
 
 
-            if (product) {
+                if (product) {
 
-                total +=
-                    Number(product.calories) || 0;
+                    total +=
+                        Number(
+                            product.calories
+                        ) || 0;
+                }
 
             }
+        );
 
-        });
+
+    const totalEl =
+        document.getElementById(
+            "calorieTotal"
+        );
 
 
-    document.getElementById(
-        "calorieTotal"
-    ).textContent =
-        `${total.toLocaleString("tr-TR")} kcal`;
+    if (totalEl) {
+
+        totalEl.textContent =
+            `${total.toLocaleString("tr-TR")} kcal`;
+    }
 }
 
 
@@ -789,15 +1214,18 @@ function openCalorieCalculator() {
 
         createCalorieCalculator();
 
+
         overlay =
             document.getElementById(
                 "calorieOverlay"
             );
-
     }
 
 
-    overlay.classList.add("show");
+    overlay.classList.add(
+        "show"
+    );
+
 
     document.body.style.overflow =
         "hidden";
@@ -816,13 +1244,17 @@ function closeCalorieCalculator() {
         );
 
 
-    if (!overlay) return;
+    if (!overlay) {
+        return;
+    }
 
 
-    overlay.classList.remove("show");
+    overlay.classList.remove(
+        "show"
+    );
 
-    document.body.style.overflow =
-        "";
+
+    restoreBodyScroll();
 }
 
 
@@ -836,11 +1268,14 @@ function clearCalories() {
         .querySelectorAll(
             "#calorieList input[type='checkbox']"
         )
-        .forEach(checkbox => {
+        .forEach(
+            checkbox => {
 
-            checkbox.checked = false;
+                checkbox.checked =
+                    false;
 
-        });
+            }
+        );
 
 
     updateCalorieTotal();
@@ -851,6 +1286,21 @@ function clearCalories() {
    BAŞLAT
    ===================================================== */
 
-renderCategories();
+if (
+    typeof menuData !== "undefined" &&
+    menuData.categories &&
+    Array.isArray(menuData.categories) &&
+    menuData.products &&
+    Array.isArray(menuData.products)
+) {
 
-renderProducts();
+    renderCategories();
+
+    renderProducts();
+
+} else {
+
+    console.error(
+        "menuData yüklenemedi. menu.js dosyasını kontrol edin."
+    );
+}
