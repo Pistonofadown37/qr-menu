@@ -24,7 +24,7 @@ const menuData = {
       ingredients: "Dana antrikot, zeytinyağı, tuz, karabiber, baharat",
       allergens: "Bilinen alerjen yok",
       price: 820,
-      calories: 750,
+      calories: 520,
       image: "images/antrikot.jpg"
     },
 
@@ -36,7 +36,7 @@ const menuData = {
       ingredients: "Kuzu eti, zeytinyağı, tuz, karabiber, baharat",
       allergens: "Bilinen alerjen yok",
       price: 890,
-      calories: 780,
+      calories: 620,
       image: "images/lokum-kuzu.jpg"
     },
 
@@ -48,7 +48,7 @@ const menuData = {
       ingredients: "Kuzu pirzola, zeytinyağı, tuz, karabiber",
       allergens: "Bilinen alerjen yok",
       price: 890,
-      calories: 850,
+      calories: 680,
       image: "images/kuzu-pirzola.jpg"
     },
 
@@ -60,7 +60,7 @@ const menuData = {
       ingredients: "Tavuk eti, zeytinyağı, baharat, sarımsak",
       allergens: "Bilinen alerjen yok",
       price: 500,
-      calories: 620,
+      calories: 480,
       image: "images/tavuk-pirzola.jpg"
     },
 
@@ -72,7 +72,7 @@ const menuData = {
       ingredients: "Dana ciğer, un, tereyağı, soğan, baharat",
       allergens: "Gluten, süt ürünü",
       price: 600,
-      calories: 700,
+      calories: 560,
       image: "images/yaprak-ciger.jpg"
     },
 
@@ -84,7 +84,7 @@ const menuData = {
       ingredients: "Dana eti, sucuk baharatı, sarımsak, tuz",
       allergens: "Bilinen alerjen yok",
       price: 600,
-      calories: 680,
+      calories: 620,
       image: "images/sucuk-izgara.jpg"
     },
 
@@ -96,7 +96,7 @@ const menuData = {
       ingredients: "Tavuk kanat, zeytinyağı, baharat, sarımsak",
       allergens: "Bilinen alerjen yok",
       price: 600,
-      calories: 720,
+      calories: 580,
       image: "images/tavuk-kanat.jpg"
     },
 
@@ -108,7 +108,7 @@ const menuData = {
       ingredients: "Kuzu bağırsağı, baharat, domates, biber",
       allergens: "Bilinen alerjen yok",
       price: "180 TL - Tek Halka",
-      calories: 850,
+      calories: 430,
       image: "images/kokorec-izgara.jpg"
     },
 
@@ -120,7 +120,7 @@ const menuData = {
       ingredients: "Dana eti, domates, biber, soğan, sarımsak, baharat",
       allergens: "Bilinen alerjen yok",
       price: 890,
-      calories: 800,
+      calories: 650,
       image: "images/eli-bogrunde.jpg"
     },
 
@@ -132,7 +132,7 @@ const menuData = {
       ingredients: "Dana eti, tavuk eti, köfte, sebze, baharat",
       allergens: "Yumurta, gluten",
       price: "1750 TL - İki Kişilik",
-      calories: 1100,
+      calories: 1850,
       image: "images/tepsi-karisik.jpg"
     },
 
@@ -144,7 +144,7 @@ const menuData = {
       ingredients: "Dana kıyma, ekmek, yoğurt, domates sosu, tereyağı",
       allergens: "Gluten, süt ürünü",
       price: 650,
-      calories: 950,
+      calories: 820,
       image: "images/balaban-kofte.jpg"
     },
 
@@ -156,7 +156,7 @@ const menuData = {
       ingredients: "Dana kıyma, soğan, galeta unu, baharat",
       allergens: "Gluten, yumurta",
       price: 600,
-      calories: 750,
+      calories: 520,
       image: "images/izgara-kofte.jpg"
     },
 
@@ -168,7 +168,7 @@ const menuData = {
       ingredients: "Dana köfte, domates, biber, kaşar peyniri, baharat",
       allergens: "Gluten, süt ürünü, yumurta",
       price: 650,
-      calories: 900,
+      calories: 720,
       image: "images/kiremitte-kofte.jpg"
     },
 
@@ -180,7 +180,7 @@ const menuData = {
       ingredients: "Kuzu eti, tavuk eti, köfte, sucuk, sebze",
       allergens: "Gluten, yumurta",
       price: 850,
-      calories: 1200,
+      calories: 1150,
       image: "images/karisik-izgara.jpg"
     },
 
@@ -192,7 +192,7 @@ const menuData = {
       ingredients: "Dana bonfile, zeytinyağı, tuz, karabiber",
       allergens: "Bilinen alerjen yok",
       price: 850,
-      calories: 700,
+      calories: 480,
       image: "images/izgara-bonfile.jpg"
     },
 
@@ -204,7 +204,7 @@ const menuData = {
       ingredients: "Dana bonfile, tereyağı, sarımsak, baharat",
       allergens: "Süt ürünü",
       price: 850,
-      calories: 850,
+      calories: 620,
       image: "images/tereyagli-bonfile.jpg"
     },
 
@@ -216,7 +216,7 @@ const menuData = {
       ingredients: "Tavuk eti, zeytinyağı, yoğurt, baharat",
       allergens: "Süt ürünü",
       price: 500,
-      calories: 650,
+      calories: 420,
       image: "images/tavuk-sis.jpg"
     },
 
@@ -228,10 +228,9 @@ const menuData = {
       ingredients: "Dana bonfile, domates, biber, soğan, sarımsak, baharat",
       allergens: "Bilinen alerjen yok",
       price: 800,
-      calories: 800,
+      calories: 610,
       image: "images/sac-kavurma.jpg"
     },
-
 
     /* =========================
        BALIK
@@ -245,7 +244,7 @@ const menuData = {
       ingredients: "Levrek, zeytinyağı, limon, tuz",
       allergens: "Balık",
       price: "Fiyat Sorunuz",
-      calories: 550,
+      calories: 360,
       image: "images/levrek.jpg"
     },
 
@@ -257,7 +256,7 @@ const menuData = {
       ingredients: "Çipura, zeytinyağı, limon, tuz",
       allergens: "Balık",
       price: "Fiyat Sorunuz",
-      calories: 520,
+      calories: 390,
       image: "images/cipura.jpg"
     },
 
@@ -269,7 +268,7 @@ const menuData = {
       ingredients: "Somon, zeytinyağı, limon, baharat",
       allergens: "Balık",
       price: "Fiyat Sorunuz",
-      calories: 680,
+      calories: 460,
       image: "images/somon.jpg"
     },
 
@@ -281,7 +280,7 @@ const menuData = {
       ingredients: "Kaya levreği, zeytinyağı, limon, baharat",
       allergens: "Balık",
       price: "Fiyat Sorunuz",
-      calories: 560,
+      calories: 380,
       image: "images/kaya-levregi.jpg"
     },
 
@@ -293,7 +292,7 @@ const menuData = {
       ingredients: "Hamsi, mısır unu, yağ, limon",
       allergens: "Balık, gluten",
       price: "Fiyat Sorunuz",
-      calories: 650,
+      calories: 520,
       image: "images/hamsi.jpg"
     },
 
@@ -305,7 +304,7 @@ const menuData = {
       ingredients: "İstavrit, un, yağ, limon",
       allergens: "Balık, gluten",
       price: "Fiyat Sorunuz",
-      calories: 600,
+      calories: 480,
       image: "images/istavrit.jpg"
     },
 
@@ -317,7 +316,7 @@ const menuData = {
       ingredients: "Çinekop, un, yağ, limon",
       allergens: "Balık, gluten",
       price: "Fiyat Sorunuz",
-      calories: 650,
+      calories: 470,
       image: "images/cinekop.jpg"
     },
 
@@ -329,7 +328,7 @@ const menuData = {
       ingredients: "Barbun, un, yağ, limon",
       allergens: "Balık, gluten",
       price: "Fiyat Sorunuz",
-      calories: 620,
+      calories: 510,
       image: "images/barbun.jpg"
     },
 
@@ -341,7 +340,7 @@ const menuData = {
       ingredients: "Levrek, domates, biber, soğan, limon",
       allergens: "Balık",
       price: "Fiyat Sorunuz",
-      calories: 600,
+      calories: 320,
       image: "images/levrek-bugulama.jpg"
     },
 
@@ -353,7 +352,7 @@ const menuData = {
       ingredients: "Çipura, domates, biber, soğan, limon",
       allergens: "Balık",
       price: "Fiyat Sorunuz",
-      calories: 580,
+      calories: 340,
       image: "images/cipura-bugulama.jpg"
     },
 
@@ -365,7 +364,7 @@ const menuData = {
       ingredients: "Hamsi, soğan, limon, domates, baharat",
       allergens: "Balık",
       price: "Fiyat Sorunuz",
-      calories: 550,
+      calories: 390,
       image: "images/hamsi-bugulama.jpg"
     },
 
@@ -377,10 +376,9 @@ const menuData = {
       ingredients: "Mevsim balığı, kaya tuzu, limon",
       allergens: "Balık",
       price: "Fiyat Sorunuz",
-      calories: 650,
+      calories: 380,
       image: "images/tuzda-balik.jpg"
     },
-
 
     /* =========================
        KEBAP & DÜRÜM
@@ -394,7 +392,7 @@ const menuData = {
       ingredients: "Dana eti, kuzu eti, kuyruk yağı, kırmızı biber, baharat",
       allergens: "Bilinen alerjen yok",
       price: 650,
-      calories: 850,
+      calories: 620,
       image: "images/adana-kebap.jpg"
     },
 
@@ -406,7 +404,7 @@ const menuData = {
       ingredients: "Dana eti, kuzu eti, kuyruk yağı, baharat",
       allergens: "Bilinen alerjen yok",
       price: 650,
-      calories: 820,
+      calories: 580,
       image: "images/urfa-kebap.jpg"
     },
 
@@ -418,7 +416,7 @@ const menuData = {
       ingredients: "Tavuk eti, lavaş, domates, marul, soğan",
       allergens: "Gluten",
       price: 320,
-      calories: 650,
+      calories: 590,
       image: "images/tavuk-durum.jpg"
     },
 
@@ -430,7 +428,7 @@ const menuData = {
       ingredients: "Dana ciğer, lavaş, soğan, maydanoz, baharat",
       allergens: "Gluten",
       price: 320,
-      calories: 700,
+      calories: 610,
       image: "images/ciger-durum.jpg"
     },
 
@@ -442,7 +440,7 @@ const menuData = {
       ingredients: "Dana köfte, lavaş, domates, marul, soğan",
       allergens: "Gluten, yumurta",
       price: 320,
-      calories: 750,
+      calories: 680,
       image: "images/kofte-durum.jpg"
     },
 
@@ -454,7 +452,7 @@ const menuData = {
       ingredients: "Adana kebap, lavaş, domates, soğan, maydanoz",
       allergens: "Gluten",
       price: 320,
-      calories: 780,
+      calories: 720,
       image: "images/adana-durum.jpg"
     },
 
@@ -466,10 +464,9 @@ const menuData = {
       ingredients: "Urfa kebap, lavaş, domates, soğan, maydanoz",
       allergens: "Gluten",
       price: 320,
-      calories: 750,
+      calories: 680,
       image: "images/urfa-durum.jpg"
     },
-
 
     /* =========================
        SALATALAR
@@ -483,7 +480,7 @@ const menuData = {
       ingredients: "Domates, salatalık, soğan, maydanoz, nar ekşisi",
       allergens: "Bilinen alerjen yok",
       price: 195,
-      calories: 180,
+      calories: 110,
       image: "images/kasik-salata.jpg"
     },
 
@@ -495,7 +492,7 @@ const menuData = {
       ingredients: "Marul, roka, domates, peynir, ceviz, özel sos",
       allergens: "Süt ürünü, sert kabuklu yemiş",
       price: 250,
-      calories: 350,
+      calories: 420,
       image: "images/ibo-sef-salata.jpg"
     },
 
@@ -519,10 +516,9 @@ const menuData = {
       ingredients: "Marul, domates, salatalık, roka, havuç, zeytinyağı",
       allergens: "Bilinen alerjen yok",
       price: 240,
-      calories: 280,
+      calories: 230,
       image: "images/duble-salata.jpg"
     },
-
 
     /* =========================
        ARA SICAKLAR
@@ -536,7 +532,7 @@ const menuData = {
       ingredients: "Bulgur, dana kıyma, ceviz, soğan, baharat",
       allergens: "Gluten, sert kabuklu yemiş",
       price: 150,
-      calories: 380,
+      calories: 240,
       image: "images/icli-kofte.jpg"
     },
 
@@ -548,7 +544,7 @@ const menuData = {
       ingredients: "Ahtapot, domates, biber, soğan, sarımsak, tereyağı",
       allergens: "Yumuşakça, süt ürünü",
       price: "Fiyat Sorunuz",
-      calories: 500,
+      calories: 340,
       image: "images/ahtapot-guvec.jpg"
     },
 
@@ -560,7 +556,7 @@ const menuData = {
       ingredients: "Karides, tereyağı, sarımsak, limon, baharat",
       allergens: "Kabuklu deniz ürünü, süt ürünü",
       price: 790,
-      calories: 520,
+      calories: 420,
       image: "images/karides-tava.jpg"
     },
 
@@ -572,7 +568,7 @@ const menuData = {
       ingredients: "Kalamar, un, yağ, limon, sos",
       allergens: "Yumuşakça, gluten",
       price: 790,
-      calories: 600,
+      calories: 550,
       image: "images/kalamar-tava.jpg"
     },
 
@@ -584,7 +580,7 @@ const menuData = {
       ingredients: "Patates, bitkisel yağ, tuz, baharat",
       allergens: "Çapraz bulaşma olabilir",
       price: 150,
-      calories: 500,
+      calories: 420,
       image: "images/patates-kizartma.jpg"
     },
 
@@ -596,10 +592,9 @@ const menuData = {
       ingredients: "Yufka, pastırma, kaşar peyniri, domates, biber",
       allergens: "Gluten, süt ürünü",
       price: 150,
-      calories: 650,
+      calories: 520,
       image: "images/pacanga-boregi.jpg"
     },
-
 
     /* =========================
        ÇOCUK MENÜSÜ
@@ -613,10 +608,9 @@ const menuData = {
       ingredients: "Dana köfte, hamburger ekmeği, cheddar, domates, marul, patates",
       allergens: "Gluten, süt ürünü, yumurta",
       price: 450,
-      calories: 850,
+      calories: 820,
       image: "images/burger.jpg"
     },
-
 
     /* =========================
        TATLILAR
@@ -630,7 +624,7 @@ const menuData = {
       ingredients: "Kabak, şeker, ceviz, tahin",
       allergens: "Sert kabuklu yemiş, susam",
       price: 220,
-      calories: 450,
+      calories: 390,
       image: "images/kabak-tatlisi.jpg"
     },
 
@@ -642,7 +636,7 @@ const menuData = {
       ingredients: "Süt, pirinç, şeker, nişasta",
       allergens: "Süt ürünü",
       price: 150,
-      calories: 350,
+      calories: 290,
       image: "images/sutlac.jpg"
     },
 
@@ -654,7 +648,7 @@ const menuData = {
       ingredients: "Yufka, tereyağı, ceviz, şeker, şerbet",
       allergens: "Gluten, süt ürünü, sert kabuklu yemiş",
       price: "Fiyat Sorunuz",
-      calories: 650,
+      calories: 550,
       image: "images/baklava.jpg"
     },
 
@@ -666,7 +660,7 @@ const menuData = {
       ingredients: "Tahin, şeker, süt, tereyağı",
       allergens: "Susam, süt ürünü",
       price: 150,
-      calories: 550,
+      calories: 430,
       image: "images/firin-helva.jpg"
     },
 
@@ -678,10 +672,9 @@ const menuData = {
       ingredients: "Mevsim meyveleri",
       allergens: "Bilinen alerjen yok",
       price: 150,
-      calories: 250,
+      calories: 220,
       image: "images/meyve-tabagi.jpg"
     },
-
 
     /* =========================
        İÇECEKLER
@@ -731,7 +724,7 @@ const menuData = {
       ingredients: "Su, çay aroması, şeker",
       allergens: "Bilinen alerjen yok",
       price: 95,
-      calories: 150,
+      calories: 130,
       image: "images/fuse-tea.jpg"
     },
 
@@ -743,7 +736,7 @@ const menuData = {
       ingredients: "Meyve suyu konsantresi, su, şeker",
       allergens: "Meyve çeşidine göre değişebilir",
       price: 95,
-      calories: 180,
+      calories: 110,
       image: "images/meyve-suyu.jpg"
     },
 
@@ -755,7 +748,7 @@ const menuData = {
       ingredients: "Yoğurt, su, tuz",
       allergens: "Süt ürünü",
       price: 90,
-      calories: 120,
+      calories: 90,
       image: "images/ayran.jpg"
     },
 
@@ -767,7 +760,7 @@ const menuData = {
       ingredients: "Şalgam, havuç, su, tuz, baharat",
       allergens: "Bilinen alerjen yok",
       price: 85,
-      calories: 50,
+      calories: 25,
       image: "images/salgam.jpg"
     },
 
@@ -803,7 +796,7 @@ const menuData = {
       ingredients: "Çay, su",
       allergens: "Bilinen alerjen yok",
       price: 25,
-      calories: 5,
+      calories: 2,
       image: "images/cay.jpg"
     },
 
@@ -815,7 +808,7 @@ const menuData = {
       ingredients: "Öğütülmüş kahve, su",
       allergens: "Bilinen alerjen yok",
       price: 60,
-      calories: 10,
+      calories: 7,
       image: "images/turk-kahvesi.jpg"
     },
 
@@ -827,7 +820,7 @@ const menuData = {
       ingredients: "Süt, kahve",
       allergens: "Süt ürünü",
       price: 60,
-      calories: 180,
+      calories: 130,
       image: "images/sutlu-kahve.jpg"
     }
 
