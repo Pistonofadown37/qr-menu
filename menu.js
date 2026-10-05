@@ -25,7 +25,7 @@ const menuData = {
       allergens: "Yetkiliye Sorunuz",
       price: 120,
       calories: 20,
-      image: ""
+      image: "images/corba.jfif"
     },
      {
       id: 67,
@@ -36,7 +36,7 @@ const menuData = {
       allergens: "Yetkiliye Sorunuz",
       price: 200,
       calories: 40,
-      image: ""
+      image: "images/balikcorbasi.jfif"
     },
 
     /* =========================
