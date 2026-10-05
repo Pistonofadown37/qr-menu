@@ -59,7 +59,7 @@ const menuData = {
       description: "Özel soslarla marine edilmiş tavuk pirzola.",
       ingredients: "Tavuk eti, zeytinyağı, baharat, sarımsak",
       allergens: "Bilinen alerjen yok",
-      price: 500,
+      price: 440,
       calories: 480,
       image: "images/tavuk-pirzola.jpg"
     },
@@ -71,7 +71,7 @@ const menuData = {
       description: "İnce dilimlenmiş ve özel baharatlarla hazırlanmış dana ciğer.",
       ingredients: "Dana ciğer, un, tereyağı, soğan, baharat",
       allergens: "Gluten, süt ürünü",
-      price: 600,
+      price: 490,
       calories: 560,
       image: "images/yaprak-ciger.jpg"
     },
@@ -83,7 +83,7 @@ const menuData = {
       description: "Izgarada pişirilmiş baharatlı dana sucuğu.",
       ingredients: "Dana eti, sucuk baharatı, sarımsak, tuz",
       allergens: "Bilinen alerjen yok",
-      price: 600,
+      price: 540,
       calories: 620,
       image: "images/sucuk-izgara.jpg"
     },
@@ -95,7 +95,7 @@ const menuData = {
       description: "Özel soslarla marine edilmiş çıtır tavuk kanat.",
       ingredients: "Tavuk kanat, zeytinyağı, baharat, sarımsak",
       allergens: "Bilinen alerjen yok",
-      price: 600,
+      price: 490,
       calories: 580,
       image: "images/tavuk-kanat.jpg"
     },
@@ -143,7 +143,7 @@ const menuData = {
       description: "Özel sos ve yoğurt eşliğinde servis edilen dana köfte.",
       ingredients: "Dana kıyma, ekmek, yoğurt, domates sosu, tereyağı",
       allergens: "Gluten, süt ürünü",
-      price: 650,
+      price: 540,
       calories: 820,
       image: "images/balaban-kofte.jpg"
     },
@@ -155,7 +155,7 @@ const menuData = {
       description: "Özel baharatlarla hazırlanmış dana köfte.",
       ingredients: "Dana kıyma, soğan, galeta unu, baharat",
       allergens: "Gluten, yumurta",
-      price: 600,
+      price: 490,
       calories: 520,
       image: "images/izgara-kofte.jpg"
     },
@@ -167,7 +167,7 @@ const menuData = {
       description: "Sebzeler ve özel sos ile kiremitte pişirilen köfte.",
       ingredients: "Dana köfte, domates, biber, kaşar peyniri, baharat",
       allergens: "Gluten, süt ürünü, yumurta",
-      price: 650,
+      price: 590,
       calories: 720,
       image: "images/kiremitte-kofte.jpg"
     },
@@ -203,7 +203,7 @@ const menuData = {
       description: "Tereyağı ile lezzetlendirilmiş dana bonfile.",
       ingredients: "Dana bonfile, tereyağı, sarımsak, baharat",
       allergens: "Süt ürünü",
-      price: 850,
+      price: 890,
       calories: 620,
       image: "images/tereyagli-bonfile.jpg"
     },
@@ -215,7 +215,7 @@ const menuData = {
       description: "Özel sosla marine edilmiş tavuk şiş.",
       ingredients: "Tavuk eti, zeytinyağı, yoğurt, baharat",
       allergens: "Süt ürünü",
-      price: 500,
+      price: 440,
       calories: 420,
       image: "images/tavuk-sis.jpg"
     },
@@ -227,7 +227,7 @@ const menuData = {
       description: "Dana bonfile ve sebzelerle hazırlanan geleneksel saç kavurma.",
       ingredients: "Dana bonfile, domates, biber, soğan, sarımsak, baharat",
       allergens: "Bilinen alerjen yok",
-      price: 800,
+      price: 740,
       calories: 610,
       image: "images/sac-kavurma.jpg"
     },
@@ -391,7 +391,7 @@ const menuData = {
       description: "Acılı dana ve kuzu eti ile hazırlanan geleneksel kebap.",
       ingredients: "Dana eti, kuzu eti, kuyruk yağı, kırmızı biber, baharat",
       allergens: "Bilinen alerjen yok",
-      price: 650,
+      price: 540,
       calories: 620,
       image: "images/adana-kebap.jpg"
     },
@@ -403,7 +403,7 @@ const menuData = {
       description: "Baharatları dengeli, geleneksel Urfa kebabı.",
       ingredients: "Dana eti, kuzu eti, kuyruk yağı, baharat",
       allergens: "Bilinen alerjen yok",
-      price: 650,
+      price: 540,
       calories: 580,
       image: "images/urfa-kebap.jpg"
     },
@@ -555,7 +555,7 @@ const menuData = {
       description: "Tereyağı ve baharatlarla hazırlanan sıcak karides.",
       ingredients: "Karides, tereyağı, sarımsak, limon, baharat",
       allergens: "Kabuklu deniz ürünü, süt ürünü",
-      price: 790,
+      price: 590,
       calories: 420,
       image: "images/karides-tava.jpg"
     },
@@ -567,7 +567,7 @@ const menuData = {
       description: "Çıtır kaplamalı kalamar, özel sos eşliğinde servis edilir.",
       ingredients: "Kalamar, un, yağ, limon, sos",
       allergens: "Yumuşakça, gluten",
-      price: 790,
+      price: 490,
       calories: 550,
       image: "images/kalamar-tava.jpg"
     },
@@ -687,7 +687,7 @@ const menuData = {
       description: "Soğuk servis edilir.",
       ingredients: "Gazlı içecek",
       allergens: "Bilinen alerjen yok",
-      price: "Kutu: 95 TL / Şişe: 75 TL",
+      price: "Kutu: 120 TL / Şişe: 85 TL",
       calories: 140,
       image: "images/cola.jpg"
     },
@@ -699,7 +699,7 @@ const menuData = {
       description: "Soğuk gazlı içecek.",
       ingredients: "Gazlı meyveli içecek",
       allergens: "Bilinen alerjen yok",
-      price: "Kutu: 95 TL / Şişe: 75 TL",
+      price: "Kutu: 120 TL / Şişe: 85 TL",
       calories: 150,
       image: "images/fanta.jpg"
     },
@@ -711,7 +711,7 @@ const menuData = {
       description: "Soğuk limon aromalı gazlı içecek.",
       ingredients: "Gazlı içecek",
       allergens: "Bilinen alerjen yok",
-      price: "Kutu: 95 TL / Şişe: 75 TL",
+      price: "Kutu: 120 TL / Şişe: 85 TL",
       calories: 140,
       image: "images/sprite.jpg"
     },
@@ -723,7 +723,7 @@ const menuData = {
       description: "Soğuk çay.",
       ingredients: "Su, çay aroması, şeker",
       allergens: "Bilinen alerjen yok",
-      price: 95,
+      price: "Kutu: 120 TL / Şişe: 85 TL",
       calories: 130,
       image: "images/fuse-tea.jpg"
     },
@@ -735,7 +735,7 @@ const menuData = {
       description: "Soğuk meyve aromalı içecek.",
       ingredients: "Meyve suyu konsantresi, su, şeker",
       allergens: "Meyve çeşidine göre değişebilir",
-      price: 95,
+      price: 120,
       calories: 110,
       image: "images/meyve-suyu.jpg"
     },
@@ -747,7 +747,7 @@ const menuData = {
       description: "Geleneksel soğuk ayran.",
       ingredients: "Yoğurt, su, tuz",
       allergens: "Süt ürünü",
-      price: 90,
+      price: 95,
       calories: 90,
       image: "images/ayran.jpg"
     },
@@ -759,7 +759,7 @@ const menuData = {
       description: "Geleneksel fermente şalgam suyu.",
       ingredients: "Şalgam, havuç, su, tuz, baharat",
       allergens: "Bilinen alerjen yok",
-      price: 85,
+      price: 95,
       calories: 25,
       image: "images/salgam.jpg"
     },
@@ -771,7 +771,7 @@ const menuData = {
       description: "Soğuk doğal mineralli su.",
       ingredients: "Doğal mineralli su",
       allergens: "Bilinen alerjen yok",
-      price: 60,
+      price: 70,
       calories: 0,
       image: "images/maden-suyu.jpg"
     },
