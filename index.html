@@ -48,5 +48,31 @@
 
   <script src="menu.js"></script>
   <script src="script.js"></script>
+  <script>
+    /* Çorba bilgileri: mevcut menu.js yapısını değiştirmeden düzelt */
+    if (typeof menuData !== "undefined" && Array.isArray(menuData.products)) {
+      const gununCorbasi = menuData.products.find(product => product.id === 66);
+      const balikCorbasi = menuData.products.find(product => product.id === 67);
+
+      if (gununCorbasi) {
+        gununCorbasi.description = "Günün çorbası, günlük olarak değişen çeşidiyle sıcak ve taze servis edilir.";
+        gununCorbasi.ingredients = "Günün çorbasına göre değişmektedir.";
+        gununCorbasi.allergens = "Çorba çeşidine göre değişebilir; yetkiliye sorunuz.";
+        gununCorbasi.calories = 150;
+      }
+
+      if (balikCorbasi) {
+        balikCorbasi.description = "Taze balık ve sebzelerle hazırlanan, sıcak ve lezzetli balık çorbası.";
+        balikCorbasi.ingredients = "Balık, sebzeler, limon, tuz, karabiber, baharat";
+        balikCorbasi.allergens = "Balık; diğer alerjenler tarife göre değişebilir.";
+        balikCorbasi.calories = 140;
+      }
+
+      /* Sayfa açılışında Çorbalar zaten seçiliyse kartları yenile. */
+      if (typeof activeCategory !== "undefined" && activeCategory === "corba" && typeof renderProducts === "function") {
+        renderProducts();
+      }
+    }
+  </script>
 </body>
 </html>
