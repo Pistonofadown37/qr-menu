@@ -1,5 +1,6 @@
 const menuData = {
   categories: [
+    { id: "corba", name: "Çorbalar" },
     { id: "izgaralar", name: "Izgaralar" },
     { id: "balik", name: "Balık" },
     { id: "kebap-durum", name: "Kebap & Dürüm" },
@@ -11,6 +12,32 @@ const menuData = {
   ],
 
   products: [
+     /* =========================
+       Çorbalar
+       ========================= */
+
+    {
+      id: 66,
+      category_id: "corba",
+      name: "Günün Çorbası",
+      description: "Günün Çorbası",
+      ingredients: "tuz, karabiber, baharat",
+      allergens: "Yetkiliye Sorunuz",
+      price: 120,
+      calories: 20,
+      image: ""
+    },
+     {
+      id: 67,
+      category_id: "corba",
+      name: "Balık Çorbası",
+      description: "Balık Çorbası",
+      ingredients: "tuz, karabiber, baharat",
+      allergens: "Yetkiliye Sorunuz",
+      price: 200,
+      calories: 40,
+      image: ""
+    },
 
     /* =========================
        IZGARALAR
